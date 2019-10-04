@@ -37,6 +37,7 @@ What I am planning on building is a project planner for developers, it will be c
    - Trello board
 
 #### PostMVP
+- Full screen animation when someone "completes" something in their trello board
 - Users will be able to post their projects, and create “roles” that need to be filled in order for the project to be completed. To start the Post MVP, there will only be two roles: developer, and designer. There can only be one designer per project, but as many developers as the project creator sees fit. 
 - The projects never had actual financial return, however the project creator can assign percentages of a return should the project creator choose to pursue the idea commercially. A “contract” of some sort is created, and users can use an e-sign feature to electronically sign the contract.
 
