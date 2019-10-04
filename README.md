@@ -52,6 +52,20 @@
 - Users will be able to post their projects, and create “roles” that need to be filled in order for the project to be completed. To start the Post MVP, there will only be two roles: developer, and designer. There can only be one designer per project, but as many developers as the project creator sees fit. 
 - The projects never had actual financial return, however the project creator can assign percentages of a return should the project creator choose to pursue the idea commercially. A “contract” of some sort is created, and users can use an e-sign feature to electronically sign the contract.
 
+## Components
+
+| Component | Description |
+| :---: | :---: |  
+| Header | This is the Header/Navbar |
+| Footer | This will render the Footer with social media links |
+| Featured Projects | This will render featured projects at random |
+| Recommended Projects | This will render recommended projects at random |
+| Email List | This will render the email subscription |
+| Plan Start | This will render the first portion to planning a project (name) |
+| Plan Description | Renders the second portion to planning a project (description) |
+| Plan Full Details | Renders all the remaining portions to fill out |
+| Completed Plans | This will render all completed plans |
+
 ## Estimated Timeline
 
 
