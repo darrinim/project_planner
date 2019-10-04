@@ -4,6 +4,14 @@
 ## Project Scope
 What I am planning on building is a project planner for developers, it will be called Frontkick-Starter (name pending). What you will be able to do is create a project, where you can write out a full project description and proposal, upload wireframes/designs, write out your MVP/PMVP’s, and save/delete projects. I will be using Ruby on Rails for the backend, React for the front end, as well as various additional React animation libraries. I believe I can implement all of my MVP features within the allotted time period, but my main goal will be to get to my Post MVP which will dramatically change the function of the page. The Post MVP will make it so that users can create projects or designs that they would like to make, and that user can then assign different “roles” that need to be filled in order to complete the project. Once those roles have been filled, users are able to collaborate and create projects together that newer developers will be able to add to their portfolios.
 
+## User Interaction
+
+The user will first start out at the landing page, where a user that is not logged in can view featured projects, recommended projects, an email subscription, and the log in/create a project buttons. If the user clicks on the Log In button, a form will populate where they will fill in their email as well as their password in order to log in. If a user clicks on the Create a Project button, it will bring them to a page that asks them to declare their project name, which is the first step to creating a project. After they fill in the project name, the user will be able to click on the Next button, where they are then asked to fill in a description of their project, which is part two to the creating a project process. Once they fill in the description, they select the Create a Project button. This will then lead them to the final portion in the create a project phase. They upload photos of their wireframes, fill in their MVP/Post MVP deliverables, fill in a timeline, and also edit other information that they may have already filled out. They can then either save a project, or delete it. Below the timeline, will be a trello board that are three vertical containers. The first is the items they need to do, the second is in progress, and the third is completed. As users make progress towards their project, they will drag the items that are either in progress or need to do to the appropriate container. I will be using the react-beautiful-dnd library in order to create the trello board.
+
+## Inspired By
+
+- (https://www.kickstarter.com/)
+
 ## Wireframes
 ### Mobile
 ![Wireframe 1](https://res.cloudinary.com/darrin-im/image/upload/v1570195471/IMG_2804_jmh0rk.jpg)
