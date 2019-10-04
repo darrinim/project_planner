@@ -34,7 +34,7 @@
 ![Wireframe 6](https://res.cloudinary.com/darrin-im/image/upload/v1570195503/IMG_2816_qur2we.jpg)
 
 ### ERD
-![Wireframe 1](https://drive.google.com/file/d/1LQg3hc0oWz2CgyAXZPnZ2wS7aLPTWSZx/view?usp=sharing)
+![Wireframe 1](https://res.cloudinary.com/darrin-im/image/upload/v1570204969/IMG_2821_cu7eh0.jpg)
 
 ### React Component Hierarchy
 ![Wireframe 1](https://res.cloudinary.com/darrin-im/image/upload/v1570203095/IMG_2819_ffn7zw.jpg)
