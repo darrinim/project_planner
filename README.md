@@ -34,7 +34,10 @@
 ![Wireframe 6](https://res.cloudinary.com/darrin-im/image/upload/v1570195503/IMG_2816_qur2we.jpg)
 
 ### ERD
-![Wireframe 1](https://res.cloudinary.com/darrin-im/image/upload/v1570195516/IMG_2818_1_wb9myd.jpg)
+![Wireframe 1](https://res.cloudinary.com/darrin-im/image/upload/v1570204969/IMG_2821_cu7eh0.jpg)
+
+### React Component Hierarchy
+![Wireframe 1](https://res.cloudinary.com/darrin-im/image/upload/v1570203095/IMG_2819_ffn7zw.jpg)
 
 ### MVP/PostMVP
 #### MVP
@@ -58,13 +61,14 @@
 | :---: | :---: |  
 | Header | This is the Header/Navbar |
 | Footer | This will render the Footer with social media links |
+| Login | This will render login form |
 | Featured Projects | This will render featured projects at random |
 | Recommended Projects | This will render recommended projects at random |
 | Email List | This will render the email subscription |
-| Plan Start | This will render the first portion to planning a project (name) |
+| Plan Name | This will render the first portion to planning a project (name) |
 | Plan Description | Renders the second portion to planning a project (description) |
 | Plan Full Details | Renders all the remaining portions to fill out |
-| Completed Plans | This will render all completed plans |
+| Completed | This will render all completed plans |
 
 ## Estimated Timeline
 
@@ -75,11 +79,13 @@
 | Creating Component Structure/Routes | High | 3hrs| N/A | N/A |
 | Configuring Header Component | High | 1.5hrs| N/A | N/A |
 | Configuring Footer Component | High | 1.5hrs| N/A | N/A |
+| Configuring Login | High | 3hrs| N/A | N/A |
 | Configuring Featured Projects Component | High | 2hrs| N/A | N/A |
 | Configuring Recommended Projects | High | 2hrs| N/A | N/A |
 | Configuring Email List Component | High | 1.5hrs| N/A | N/A |
-| Configuring Plan Start Component | High | 1.5hrs| N/A | N/A |
-| Configuring Plan Project Component | High | 4hrs| N/A | N/A |
+| Configuring Plan Name Component | High | 1hrs| N/A | N/A |
+| Configuring Plan Description Component | High | 1hrs| N/A | N/A |
+| Configuring Plan Full Details Component | High | 4hrs| N/A | N/A |
 | Configuring Completed Plans Component | High | 3hrs| N/A | N/A |
 
-| Total | H | 23hrs| N/A | N/A |
+| Total | H | 26.5hrs| N/A | N/A |
