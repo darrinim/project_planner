@@ -1,42 +1,43 @@
 const Sequelize = require('sequelize');
 
 const db = new Sequelize(
-  (process.env.DATABASE_URL || 'postgres://localhost:5432/ruksak_db'),
+  (process.env.DATABASE_URL || 'postgres://localhost:5432/project_planner'),
   {
-  database: 'ruksak_db',
+  database: 'project_planner',
   dialect: 'postgres',
   define: {
     underscored: true,
   },
 });
 
-class Gear extends Sequelize.Model {}
-Gear.init({
-  gear: Sequelize.STRING,
+class Project extends Sequelize.Model {}
+Project.init({
+  name: Sequelize.STRING,
+  description: Sequelize.TEXT,
+  mvp: Sequelize.TEXT,
+  postmvp: Sequelize.TEXT,
+  status: Sequelize.INTEGER
 }, {
   sequelize: db,
-  modelName: 'gear',
+  modelName: 'project',
 });
 
-class Location extends Sequelize.Model {}
-Location.init({
-  location: Sequelize.STRING,
+class Timeline extends Sequelize.Model {}
+Timeline.init({
+  description: Sequelize.TEXT,
+  priority: Sequelize.STRING,
+  estimated_time: Sequelize.INTEGER,
+  time_invested: Sequelize.INTEGER,
+  order: Sequelize.INTEGER
 }, {
   sequelize: db,
-  modelName: 'location',
-});
-
-class Trip extends Sequelize.Model {}
-Trip.init({
-  trip: Sequelize.STRING,
-}, {
-  sequelize: db,
-  modelName: 'trip',
+  modelName: 'timeline',
 });
 
 class User extends Sequelize.Model {}
 User.init({
-  username: Sequelize.STRING,
+  first_name: Sequelize.STRING,
+  last_name: Sequelize.STRING,
   email: Sequelize.STRING,
   password_digest: Sequelize.STRING,
 }, {
@@ -63,22 +64,13 @@ User.init({
 // password_digest: Sequelize.STRING,
 // }, {
 
-Trip.belongsToMany(User, { through: 'user_trip' });
-User.belongsToMany(Trip, { through: 'user_trip' });
+User.hasMany(Project)
+Project.hasMany(Timeline)
 
-Gear.belongsToMany(Trip, { through: 'trip_gear' });
-Trip.belongsToMany(Gear, { through: 'trip_gear' });
-
-Gear.belongsTo(User, { through: 'user_gear' });
-User.belongsToMany(Gear, { through: 'user_gear' });
-
-Location.hasMany(Trip);
-Trip.belongsTo(Location);
 
 module.exports = {
   db,
-  Gear,
-  Location,
-  Trip,
   User,
+  Timeline,
+  Project
 };

@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import Header from './Component/Header/Header';
 import Login from './Component/Login/Login';
-import Main from './Component/Main/main.js';
-import Planning from './Component/Planning/Planning.js';
+import Main from './Component/main/main.js';
+import Planning from './Component/planning/Planning.js';
 import Profile from './Component/Profile/Profile';
 import { allGear, oneGear, getGearName, deleteGear, createGear, loginUser, registerUser, tripGear, getTrip, userTrips, getUser, makeTrip, deleteTrip, verifyUser, allTrips, oneTrip, getTg } from './services/api';
 
@@ -122,7 +122,7 @@ class App extends React.Component {
 
   makeGear = async (e) => {
     this.setState({
-      inputGear: e 
+      inputGear: e
     })
     await createGear({gear: e});
   };
