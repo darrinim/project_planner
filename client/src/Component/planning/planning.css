@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Metrophobic&display=swap');
+
+button {
+  margin: 0px 0px 0px 10px;
+}
+
+label {
+  padding-left: 25px;
+}
+
+.gear-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.deleteButtonStyle {
+  border: none;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+/* STYLING FOR ENTIRE CONTAINER */
+.planning-container {
+  align-items: stretch;
+  background-color: rgba(242,242,242,0.7);
+  display: flex;
+  font-family: 'Metrophobic', sans-serif;
+}
+
+/* CURRENT LIST STYLE */
+.current-list-container {
+  border-left: 5px solid rgba(255,255,255);
+  background-color: rgba(242,242,242,0.7);
+  list-style-type: none;
+  text-align: center;
+  width: 20%;
+}
+
+.current-list-li {
+  margin: 5px 0;
+  font-size: 20px;
+  cursor: pointer;
+  animation: fadeIn 0.3s ease-in both;
+  display: flex;
+  padding: 0px 15px
+
+}
+
+.finalize-button {
+  border-radius: 5px;
+  font-size: 22px;
+  margin: 30px;
+}
+
+.days, .gear, .location, .people {
+  font-size: 25px;
+  padding: 3px 15px;
+  text-align: left;
+}
+
+.gear-list {
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  overflow-Y: scroll;
+  width: 500px;
+  height: 200px;
+}
+
+/* TRIP SELECT STYLE */
+.camping {
+  width: 45%;
+  font-size: 20px;
+
+}
+
+.tripHeader {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px;
+  text-shadow: 1px 1px rgba(255,255,255,0.4);
+}
+
+.tripSelectors {
+  margin-left: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+.tripSelectors::placeholder {
+  color: white;
+  text-align: left;
+  padding-left: 5px;
+  text-shadow: 1px 1px black;
+}
+
+.typeGear, .typeLocation {
+  border: 1px solid white;
+}
+
+.typeLocation:hover {
+  transition: background-color 0.4s;
+  background-color: lightgrey;
+}
+
+/* RECOMMENDED LIST STYLE */
+.recommended-list-container {
+  height: 100%;
+  width: 25%;
+  border-left: 5px solid rgba(255,255,255);
+  background-color: rgba(242,242,242,0.7);
+}
+
+.recommended-list-header {
+  text-align: center;
+}
+
+.recommended-list-ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.recommended-list-li {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.recommended-list-li:before {
+  content: "\f1bb";
+  font-family: FontAwesome;
+  padding: 0px 15px;
+  color: green;
+}
+
+/* TRIP IMAGE STYLE */
+.photo-container {
+  display: flex;
+  justify-content: center;
+  border-bottom: 5px solid white;
+}
+
+.photoPlanning {
+  width: 100%;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@media (max-width: 750px) {
+
+  .camping {
+    font-size: 16px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .current-list-container {
+    border-left: none;
+    width: 100%;
+  }
+
+  .itineraryHeader {
+    margin-top: 0;
+    padding-top: 10px;
+    border-top: 5px solid white;
+  }
+
+  .planning-container {
+    display: inline;
+  }
+
+  .radioButtonStyle {
+    font-size: 13px;
+    padding-top: 1px;
+  }
+
+  .recommended-list-container {
+    border-top: 5px solid white;
+    border-left: none;
+    height: 65%;
+    width: 100%;
+  }
+
+  .recommended-list-li {
+    font-size: 18px;
+  }
+
+  .tripHeader {
+    font-size: 30px;
+    width: 100%;
+  }
+
+  .tripSelectors {
+    font-size: 15px;
+    margin-left: 0;
+    text-align: left;
+  }
+}

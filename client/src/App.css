@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&display=swap');
+
+body {
+  width: 100%;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  background-color: #e9ebee;
+  height: 100%;
+}
+
+.ruksak-landing {
+  background-color: black;
+  color: white;
+  margin-top: 0;
+  align-items: baseline;
+  font-family: 'Teko', sans-serif;
+  font-size: 55px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+
+#root {
+  height: 100%;
+}
