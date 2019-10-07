@@ -15,6 +15,9 @@ import { allGear, oneGear, getGearName, deleteGear, createGear, loginUser, regis
 import './App.css';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   state = {
     currentUser: null,
     form: {
@@ -29,19 +32,27 @@ class App extends React.Component {
       username: "",
       password: "",
     },
-    isShowing: false,
-    gear: [],
-    inputGear: "",
-    selectedGear: [],
-    selectedTrip: "",
-    tripSelected: "",
-    allTripsSelected: "",
+    planDetailsData: {
+      name: "",
+      description: "",
+      mvp: "",
+      postMvp: ""
+    }
   };
 
   handleChange = async (e) => {
     const { name, value } = e.target
     this.setState(prevState => ({
       form: {
+        [name]: value
+      }
+    }));
+  };
+
+  handlePlanChange = async (e) => {
+    const { name, value } = e.target
+    this.setState(prevState => ({
+      planDetailsData: {
         [name]: value
       }
     }));
@@ -67,7 +78,8 @@ class App extends React.Component {
       currentUser: userData.user
     })
     localStorage.setItem("jwt", userData.token)
-    this.props.history.push('/home')
+    // THE BELOW CODE IS WHAT I WILL EVENTUALLY USE TO GET IT TO REDIRECT TO EITHER NAME YOUR PROJECT
+    this.props.history.push('/plan')
   };
 
   handleLog = async (e) => {
@@ -77,10 +89,11 @@ class App extends React.Component {
 
       const userData = await loginUser(this.state.authLoginData);
       this.setState({
-        currentUser: userData.user
+        currentUser: userData
       })
       localStorage.setItem("jwt", userData.token)
-      this.props.history.push('/home')
+      // BELOW SHOULD GO TO LIST OF USERS PROJECTS
+      this.props.history.push('/fulldetails')
     }
   };
 
@@ -90,15 +103,14 @@ class App extends React.Component {
       await registerUser(this.state.authFormData);
       this.handleLogin();
     }
-
   };
 
-  handleLogout = () => {
-    localStorage.removeItem("jwt");
-    this.setState({
-      currentUser: null
-    })
+  handleLogout = (e) => {
+    this.setState({ currentUser: null });
+    localStorage.removeItem('authToken');
+    this.props.history.push('/');
   };
+
 
   handleAuth = async (e) => {
     const { name, value } = e.target
@@ -158,6 +170,7 @@ class App extends React.Component {
   };
 
 
+
   handleSubmit = (e) => {
     this.setState({
       location: e.target.value
@@ -166,7 +179,7 @@ class App extends React.Component {
 
 
   componentDidMount() {
-
+    this.checkUser();
   };
 
 
@@ -176,7 +189,9 @@ class App extends React.Component {
         <Switch>
         <Route exact path='/' render={() => (
           <>
-          <Header />
+          <Header
+            handleLogout={(e) => this.handleLogout(e)}
+          />
           <Featured />
           <EmailSub />
           <Footer />
@@ -185,29 +200,55 @@ class App extends React.Component {
         )} />
         <Route path='/plan' render={() => (
           <>
-          <Header />
-          <PlanName />
+          <Header
+            handleLogout={(e) => this.handleLogout(e)}
+          />
+          <PlanName
+            currentUser={this.state.currentUser.username}
+          />
           <Footer />
           </>
         )} />
         <Route path='/description' render={() => (
           <>
-          <Header />
+          <Header
+            handleLogout={(e) => this.handleLogout(e)}
+          />
           <PlanDescription />
           <Footer />
           </>
         )} />
         <Route path='/fulldetails' render={() => (
           <>
-          <Header />
-          <PlanFullDetails />
+          <Header
+            handleLogout={(e) => this.handleLogout(e)}
+          />
+          <PlanFullDetails
+            currentUser={this.state.currentUser.user.username}
+            planDetailsData={this.state.planDetailsData}
+            handlePlanChange={this.handlePlanChange}
+          />
           <Footer />
           </>
         )} />
-        <Route path='/login' render={() => (
+        <Route path='/login' render={(props) => (
           <>
-          <Header />
-          <Login />
+          <Header
+            {...props}
+            handleLogout={(e) => this.handleLogout(e)}
+          />
+          <Login
+            {...props}
+            handleLogin={(e) => this.handleLogin(e)}
+            handleRegister={(e) => this.handleRegister(e)}
+            authFormData={this.state.authFormData}
+            authLoginData={this.state.authLoginData}
+            handleChange={this.handleAuthLogin}
+            handleAuthChange={this.handleAuth}
+            handleLog={(e) => this.handleLog(e)}
+            handleSubmit={(e) => this.handleSubmit(e)}
+            handleRegisterClick={(e) => this.handleRegisterClick(e)}
+          />
           <Footer />
           </>
         )} />

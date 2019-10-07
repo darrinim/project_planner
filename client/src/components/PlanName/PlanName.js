@@ -1,12 +1,17 @@
 import React from 'react';
 import './PlanName.css'
+
 class PlanName extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
   render() {
+    console.log('this is props', this.props);
     return (
       <div className="PlanNameContainer">
         <h2>Plan your project, bring it to life</h2>
-        <h3>Let's get started!</h3>
+        <h3>Let's get started {this.props.currentUser}!</h3>
         <h3>What's your project called?</h3>
         <form className="formName">
           <input className="textName" type="textarea" placeholder="Project Name"/>

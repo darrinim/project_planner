@@ -36,8 +36,7 @@ Timeline.init({
 
 class User extends Sequelize.Model {}
 User.init({
-  first_name: Sequelize.STRING,
-  last_name: Sequelize.STRING,
+  username: Sequelize.STRING,
   email: Sequelize.STRING,
   password_digest: Sequelize.STRING,
 }, {
