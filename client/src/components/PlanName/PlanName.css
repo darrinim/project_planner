@@ -1,0 +1,24 @@
+.PlanNameContainer {
+  height: 300px;
+  text-align: center;
+  margin-top: 20%;
+}
+.formName {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50%;
+}
+.textName {
+  height: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+.textName::placeholder {
+  text-align: center;
+}
+.PlanNextButton {
+  margin-top: 5px;
+  height: 30px;
+  background-color: white;
+}

@@ -1,0 +1,16 @@
+.DetailsHeader {
+  /* border-bottom: 1px solid black; */
+  text-align: center;
+}
+.DetailsHeader::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid black;
+  width: 80%;
+  margin: 0 auto;
+}
+.FullDetailsForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}

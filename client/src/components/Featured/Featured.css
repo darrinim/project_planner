@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  font-family: 'Raleway';
+}
+
+/* .featuredImage {
+  background-image: url('https://res.cloudinary.com/darrin-im/image/upload/v1570337024/Screen_Shot_2019-10-06_at_12.41.05_AM_gdwkre.png');
+  height: 100%;
+  width: 100%;
+} */
+img {
+  width: 100%;
+}
+.container {
+  /* border: 1px solid black; */
+  padding: 0 10px;
+}
+.recommendedContainer {
+  display: flex;
+  /* border-bottom: 1px solid black; */
+  /* margin-bottom: 20px; */
+}
+/* .recommendedDesc::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+  padding-top: 10px;
+  width: 80%;
+} */
+hr {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.recommendedDesc {
+  display: flex;
+  flex-direction: column;
+  padding-left: 7%;
+}
+.recommendedPhoto {
+  width: 35%;
+}

@@ -5,7 +5,7 @@ const timeline = require('./timeline.json')
 
 const seed = async () => {
   try {
-    await User.bulkCreate(users)
+    // await User.bulkCreate(users)
     await Project.bulkCreate(projects)
     await Timeline.bulkCreate(timeline)
   } catch (e) {

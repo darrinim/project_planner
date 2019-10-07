@@ -1,8 +1,6 @@
 const axios = require('axios');
 
-// const BASE_URL = 'http://localhost:3001/';
-const BASE_URL = 'https://ruksak-rad.herokuapp.com/';
-
+const BASE_URL = 'http://localhost:3001/';
 
 const api = axios.create({ baseURL: BASE_URL });
 
@@ -66,10 +64,6 @@ export const tripGear = async (tripId, gearId) => {
   return resp.data;
 };
 
-export const getTg = async (tripId, gearId) => {
-  const resp = await api.get(`/trip/${tripId}/gear`);
-  return resp.data;
-};
 
 export const getTrip = async (tripId) => {
   const resp = await api.get(`/trip/${tripId}`);
