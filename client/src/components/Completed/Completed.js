@@ -24,6 +24,7 @@ class Completed extends React.Component {
               <li>Post MVP: {el.postMvp}</li>
               <li>Status: {el.status}</li>
               <button onClick={(e) => this.props.deleteUserProjects(el.id)}>Delete</button>
+              <button>Edit</button>
             </ul>
           )
         })}</div>

@@ -39,7 +39,7 @@ projectController.post('/user/:userId', async (req, res) => {
 });
 
 
-projectController.put('/:id', async (req, res) => {
+projectController.put('/projects/:projectId', async (req, res) => {
   try {
     const project = await Project.findByPk(req.params.id);
     await project.update(req.body);

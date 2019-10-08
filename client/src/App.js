@@ -73,6 +73,7 @@ class App extends React.Component {
     const currentUser = await verifyUser();
     // console.log('THIS IS THE CURRENT USER', currentUser);
     if (currentUser) {
+      this.getUserProjects(currentUser);
       this.setState({ currentUser });
     }
   };
@@ -100,7 +101,7 @@ class App extends React.Component {
       })
       localStorage.setItem("jwt", userData.token)
       // BELOW SHOULD GO TO LIST OF USERS PROJECTS
-      this.getUserProjects(e);
+      this.getUserProjects(userData.user);
       this.props.history.push('/completed')
     }
   };
@@ -141,10 +142,6 @@ class App extends React.Component {
   };
 
 
-  obliterateGear = async (gearId) => {
-    await deleteGear(gearId);
-  };
-
   handleGearClick = (e) => {
     this.setState(prevState => ({
       selectedGear: [...prevState.selectedGear, e]
@@ -161,35 +158,38 @@ class App extends React.Component {
 
   handleSubmitPlan = async (e) => {
     e.preventDefault();
-    await makeProject(this.state.planDetailsData, this.state.currentUser.id);
+    const newProject = await makeProject(this.state.planDetailsData, this.state.currentUser.id);
+    this.setState(prevState => ({
+      userProjects: [ ...prevState.userProjects, newProject]
+    }))
+    this.props.history.push('/completed')
   };
 
-  getUserProjects = async (e) => {
+  handleSubmitName = async (e) => {
     e.preventDefault();
-    const allProjects = await getProjects(this.state.planDetailsData, this.state.currentUser.id);
+    console.log('LOOK FOR THIS SERIOUSLY', name, value);
+    const { name, value } = e.target
+    this.setState(prevState => ({
+      planDetailsData: {
+      ...prevState.planDetailsData,
+      [name]: value
+    }
+    }));
+  };
+
+  goToDetails = async (e) => {
+    this.props.history.push('/fulldetails');
+  };
+
+  getUserProjects = async (currentUser) => {
+    const allProjects = await getProjects(this.state.planDetailsData, currentUser.id);
     this.setState({
       userProjects: allProjects
     })
   };
 
 
-  // deleteUserProjects = async (e) => {
-  //   e.preventDefault();
-  //   const deleteProject = await.deleteProject(this.state.userProjects.id)
-  //   thissetState({
-  //     userProjects:
-  //   })
-  // }
-
-  removeGearClick = async (e) => {
-    this.setState(prevState => ({
-      selectedGear: prevState.selectedGear.filter((ele, i) => i !== e)
-    })
-    )
-  };
-
   deleteUserProjects = async (projectId) => {
-    // e.preventDefault();
     console.log('this is deleteUserProjects');
     const deletingProject = await deleteProject(projectId);
     this.setState(prevState => ({
@@ -197,6 +197,11 @@ class App extends React.Component {
     })
     )
   }
+
+  // editUserProjects = async (projectId) => {
+  //   const editProject = await editProjects(projectId);
+  //
+  // }
 
 
   async componentDidMount() {
@@ -214,6 +219,7 @@ class App extends React.Component {
         <Route exact path='/' render={() => (
           <>
           <Header
+            currentUser={this.state.currentUser}
             handleLogout={(e) => this.handleLogout(e)}
           />
           <Featured />
@@ -229,6 +235,9 @@ class App extends React.Component {
           />
           <PlanName
             currentUser={this.state.currentUser}
+            handleSubmitName={this.handleSubmitName}
+            goToDetails={this.goToDetails}
+            handlePlanChange={this.handlePlanChange}
           />
           <Footer />
           </>
@@ -264,7 +273,6 @@ class App extends React.Component {
             handleLog={(e) => this.handleLog(e)}
             handleSubmit={(e) => this.handleSubmit(e)}
             handleRegisterClick={(e) => this.handleRegisterClick(e)}
-            getUserProjects={(e) => this.getUserProjects(e)}
           />
           <Footer />
           </>

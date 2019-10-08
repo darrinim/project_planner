@@ -11,7 +11,7 @@ class PlanFullDetails extends React.Component {
     return(
       <div className="FullDetailsContainer">
         <div className="DetailsHeader">
-          <h2>Project Name</h2>
+          <h2>{this.props.planDetailsData.name}</h2>
           <h4>By {this.props.currentUser && this.props.currentUser.username}</h4>
           <h5>Project Status</h5>
         </div>

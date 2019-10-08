@@ -8,13 +8,14 @@ class Header extends React.Component {
   }
 
   render() {
-    // console.log('look at me!', this.props);
+    const loggedIn = this.props.currentUser !== null ?
+      <Link to="/plan">Start a Project</Link>  : <Link to="/login">Start a Project</Link>
   return (
     <div className="headerContainer">
       <nav>
         <ul className="navbar">
           <li>
-            <Link to="/login">Start a Project</Link>
+            {loggedIn}
           </li>
           <li>
             <Link to="/login">Login</Link>

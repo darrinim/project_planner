@@ -24,7 +24,7 @@ class Form extends React.Component {
 
 
   render() {
-    console.log('look at this one PLEASE', this.props);
+    // console.log('look at this one PLEASE', this.props);
     return (
       <div>
         <form
