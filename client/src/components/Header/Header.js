@@ -10,7 +10,7 @@ class Header extends React.Component {
   render() {
     console.log('look at me!', this.props);
   return (
-    <div>
+    <div className="headerContainer">
       <nav>
         <ul className="navbar">
           <li>
@@ -20,7 +20,8 @@ class Header extends React.Component {
             <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link onClick={(e) => this.props.handleLogout(e)}>Log out</Link>
+            <Link
+              onClick={(e) => this.props.handleLogout(e)}>Log out</Link>
           </li>
         </ul>
       </nav>

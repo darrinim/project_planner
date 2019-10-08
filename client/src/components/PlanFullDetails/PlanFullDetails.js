@@ -12,10 +12,12 @@ class PlanFullDetails extends React.Component {
       <div className="FullDetailsContainer">
         <div className="DetailsHeader">
           <h2>Project Name</h2>
-          <h4>By {this.props.currentUser}</h4>
+          <h4>By {this.props.currentUser.username}</h4>
           <h5>Project Status</h5>
         </div>
-        <form className="FullDetailsForm">
+        <form
+          className="FullDetailsForm"
+          onSubmit={this.props.handleSubmitPlan}>
           <label for="description">Description: </label>
           <input
             type="text"
@@ -28,12 +30,18 @@ class PlanFullDetails extends React.Component {
             name="mvp"
             onChange={this.props.handlePlanChange}
             />
-          <label for="postmvp">Post MVP: </label>
+          <label for="postMvp">Post MVP: </label>
           <input
             type="text"
-            name="postmvp"
+            name="postMvp"
             onChange={this.props.handlePlanChange}
             />
+          <label for="status">Status: </label>
+          <input
+              type="status"
+              name="status"
+              onChange={this.props.handlePlanChange}
+          />
           <button type="submit">Save Plan</button>
         </form>
       </div>

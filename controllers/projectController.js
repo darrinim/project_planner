@@ -28,7 +28,7 @@ projectController.get('/user/:userId', async (req, res) => {
 });
 
 // create new project
-projectController.post('/', async (req, res) => {
+projectController.post('/user/:userId', async (req, res) => {
   try {
     const project = await Project.create(req.body);
     res.json(project);
@@ -41,7 +41,7 @@ projectController.post('/', async (req, res) => {
 
 projectController.put('/:id', async (req, res) => {
   try {
-    const project = await project.findByPk(req.params.id);
+    const project = await Project.findByPk(req.params.id);
     await project.update(req.body);
     res.json(project);
   } catch (e) {

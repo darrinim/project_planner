@@ -10,7 +10,7 @@ import PlanDescription from './components/PlanDescription/PlanDescription';
 import PlanFullDetails from './components/PlanFullDetails/PlanFullDetails';
 import Login from './components/Login/Login'
 
-import { allGear, oneGear, getGearName, deleteGear, createGear, loginUser, registerUser, tripGear, getTrip, userTrips, getUser, makeTrip, deleteTrip, verifyUser, allTrips, oneTrip, getTg } from './services/api';
+import { allGear, oneGear, getGearName, deleteGear, createGear, loginUser, registerUser, tripGear, getTrip, userTrips, getUser, makeProject, deleteTrip, verifyUser, allTrips, oneTrip, getTg } from './services/api';
 
 import './App.css';
 
@@ -36,7 +36,8 @@ class App extends React.Component {
       name: "",
       description: "",
       mvp: "",
-      postMvp: ""
+      postMvp: "",
+      status: "",
     }
   };
 
@@ -51,8 +52,10 @@ class App extends React.Component {
 
   handlePlanChange = async (e) => {
     const { name, value } = e.target
+    console.log('this is name, value', name, value);
     this.setState(prevState => ({
       planDetailsData: {
+        ...prevState.planDetailsData,
         [name]: value
       }
     }));
@@ -66,6 +69,7 @@ class App extends React.Component {
 
   checkUser = async () => {
     const currentUser = await verifyUser();
+    console.log('THIS IS THE CURRENT USER', currentUser);
     if (currentUser) {
       this.setState({ currentUser });
     }
@@ -74,6 +78,7 @@ class App extends React.Component {
   handleLogin = async (e) => {
     // e.preventDefault();
     const userData = await loginUser(this.state.authFormData);
+    console.log('this is user data', userData.user);
     this.setState({
       currentUser: userData.user
     })
@@ -89,7 +94,7 @@ class App extends React.Component {
 
       const userData = await loginUser(this.state.authLoginData);
       this.setState({
-        currentUser: userData
+        currentUser: userData.user
       })
       localStorage.setItem("jwt", userData.token)
       // BELOW SHOULD GO TO LIST OF USERS PROJECTS
@@ -161,20 +166,11 @@ class App extends React.Component {
     )
   };
 
-  makeATrip = async (tripType) => {
-    const tripName = await oneTrip(tripType);
-    const current = await makeTrip({ trip: tripName.trip });
-    this.setState({
-      tripSelected: current
-    })
-  };
 
-
-
-  handleSubmit = (e) => {
-    this.setState({
-      location: e.target.value
-    })
+  handleSubmitPlan = async (e) => {
+    e.preventDefault();
+    console.log('THIS IS THE ONE', this.state.planDetailsData)
+    await makeProject(this.state.planDetailsData);
   };
 
 
@@ -184,6 +180,8 @@ class App extends React.Component {
 
 
   render() {
+    console.log(this.state.planDetailsData)
+    // console.log(this.state.currentUser.user.username && this.state.currentUser.user.username)
     return (
       <div className="App">
         <Switch>
@@ -204,7 +202,7 @@ class App extends React.Component {
             handleLogout={(e) => this.handleLogout(e)}
           />
           <PlanName
-            currentUser={this.state.currentUser.username}
+            currentUser={this.state.currentUser}
           />
           <Footer />
           </>
@@ -224,9 +222,10 @@ class App extends React.Component {
             handleLogout={(e) => this.handleLogout(e)}
           />
           <PlanFullDetails
-            currentUser={this.state.currentUser.user.username}
+            currentUser={this.state.currentUser}
             planDetailsData={this.state.planDetailsData}
             handlePlanChange={this.handlePlanChange}
+            handleSubmitPlan={this.handleSubmitPlan}
           />
           <Footer />
           </>

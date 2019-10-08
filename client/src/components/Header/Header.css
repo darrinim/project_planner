@@ -1,3 +1,7 @@
+.headerContainer {
+  background-color: f9fce1;
+}
+
 .navbar {
   /* border: 1px solid black; */
   display: flex;

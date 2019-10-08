@@ -4,6 +4,11 @@ const BASE_URL = 'http://localhost:3001/';
 
 const api = axios.create({ baseURL: BASE_URL });
 
+export const makeProject = async (project) => {
+  const resp = await api.post('/fulldetails', project);
+  return resp.data;
+};
+
 export const oneLocation = async (location) => {
   const loc = await api.get(`/location/${location}`);
   return loc.data;
