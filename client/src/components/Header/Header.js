@@ -8,7 +8,7 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log('look at me!', this.props);
+    // console.log('look at me!', this.props);
   return (
     <div className="headerContainer">
       <nav>
@@ -23,6 +23,7 @@ class Header extends React.Component {
             <Link
               onClick={(e) => this.props.handleLogout(e)}>Log out</Link>
           </li>
+{          /*<li><img className="dogHeader"src="https://res.cloudinary.com/darrin-im/image/upload/v1570502752/DogCartoon-wink_z9b537.png" /></li>*/}
         </ul>
       </nav>
     </div>

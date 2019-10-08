@@ -7,6 +7,7 @@ class PlanName extends React.Component {
   }
 
   render() {
+    console.log('this is what to look for', this.props.currentUser);
     return (
       <div className="PlanNameContainer">
         <h2>Plan your project, bring it to life</h2>
@@ -22,7 +23,7 @@ class PlanName extends React.Component {
             onChange={this.props.handlePlanChange}
             />
           <button
-            className="PlanNextButton">Next: Project Description</button>
+            className="PlanNextButton">Next: Project Details</button>
         </form>
       </div>
     )

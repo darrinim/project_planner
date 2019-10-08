@@ -8,9 +8,10 @@ import Project from './components/Project';
 import PlanName from './components/PlanName/PlanName';
 import PlanDescription from './components/PlanDescription/PlanDescription';
 import PlanFullDetails from './components/PlanFullDetails/PlanFullDetails';
-import Login from './components/Login/Login'
+import Login from './components/Login/Login';
+import Completed from './components/Completed/Completed';
 
-import { allGear, oneGear, getGearName, deleteGear, createGear, loginUser, registerUser, tripGear, getTrip, userTrips, getUser, makeProject, deleteTrip, verifyUser, allTrips, oneTrip, getTg } from './services/api';
+import { allGear, oneGear, getGearName, deleteGear, createGear, loginUser, registerUser, tripGear, getTrip, userTrips, getUser, makeProject, deleteTrip, verifyUser, allTrips, oneTrip, getTg, getProjects, deleteProject } from './services/api';
 
 import './App.css';
 
@@ -38,7 +39,8 @@ class App extends React.Component {
       mvp: "",
       postMvp: "",
       status: "",
-    }
+    },
+    userProjects: []
   };
 
   handleChange = async (e) => {
@@ -69,14 +71,14 @@ class App extends React.Component {
 
   checkUser = async () => {
     const currentUser = await verifyUser();
-    console.log('THIS IS THE CURRENT USER', currentUser);
+    // console.log('THIS IS THE CURRENT USER', currentUser);
     if (currentUser) {
       this.setState({ currentUser });
     }
   };
 
   handleLogin = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const userData = await loginUser(this.state.authFormData);
     console.log('this is user data', userData.user);
     this.setState({
@@ -98,7 +100,8 @@ class App extends React.Component {
       })
       localStorage.setItem("jwt", userData.token)
       // BELOW SHOULD GO TO LIST OF USERS PROJECTS
-      this.props.history.push('/fulldetails')
+      this.getUserProjects(e);
+      this.props.history.push('/completed')
     }
   };
 
@@ -106,7 +109,7 @@ class App extends React.Component {
     e.preventDefault();
     if (this.state.authFormData.username !== "" && this.state.authFormData.email !== "" && this.state.authFormData.password !== "") {
       await registerUser(this.state.authFormData);
-      this.handleLogin();
+      this.handleLog(e);
     }
   };
 
@@ -137,17 +140,6 @@ class App extends React.Component {
     }))
   };
 
-  getGear = async (e) => {
-    const gear = await allGear();
-    this.setState({ gear });
-  };
-
-  makeGear = async (e) => {
-    this.setState({
-      inputGear: e
-    })
-    await createGear({gear: e});
-  };
 
   obliterateGear = async (gearId) => {
     await deleteGear(gearId);
@@ -169,18 +161,52 @@ class App extends React.Component {
 
   handleSubmitPlan = async (e) => {
     e.preventDefault();
-    console.log('THIS IS THE ONE', this.state.planDetailsData)
-    await makeProject(this.state.planDetailsData);
+    await makeProject(this.state.planDetailsData, this.state.currentUser.id);
+  };
+
+  getUserProjects = async (e) => {
+    e.preventDefault();
+    const allProjects = await getProjects(this.state.planDetailsData, this.state.currentUser.id);
+    this.setState({
+      userProjects: allProjects
+    })
   };
 
 
-  componentDidMount() {
-    this.checkUser();
+  // deleteUserProjects = async (e) => {
+  //   e.preventDefault();
+  //   const deleteProject = await.deleteProject(this.state.userProjects.id)
+  //   thissetState({
+  //     userProjects:
+  //   })
+  // }
+
+  removeGearClick = async (e) => {
+    this.setState(prevState => ({
+      selectedGear: prevState.selectedGear.filter((ele, i) => i !== e)
+    })
+    )
+  };
+
+  deleteUserProjects = async (projectId) => {
+    // e.preventDefault();
+    console.log('this is deleteUserProjects');
+    const deletingProject = await deleteProject(projectId);
+    this.setState(prevState => ({
+      userProjects: prevState.userProjects.filter((el, i) => el.id !== projectId)
+    })
+    )
+  }
+
+
+  async componentDidMount() {
+    await this.checkUser();
   };
 
 
   render() {
-    console.log(this.state.planDetailsData)
+    // console.log('this is App: state: currentUser',this.state.currentUser)
+    // console.log(this.state.planDetailsData)
     // console.log(this.state.currentUser.user.username && this.state.currentUser.user.username)
     return (
       <div className="App">
@@ -204,15 +230,6 @@ class App extends React.Component {
           <PlanName
             currentUser={this.state.currentUser}
           />
-          <Footer />
-          </>
-        )} />
-        <Route path='/description' render={() => (
-          <>
-          <Header
-            handleLogout={(e) => this.handleLogout(e)}
-          />
-          <PlanDescription />
           <Footer />
           </>
         )} />
@@ -247,6 +264,21 @@ class App extends React.Component {
             handleLog={(e) => this.handleLog(e)}
             handleSubmit={(e) => this.handleSubmit(e)}
             handleRegisterClick={(e) => this.handleRegisterClick(e)}
+            getUserProjects={(e) => this.getUserProjects(e)}
+          />
+          <Footer />
+          </>
+        )} />
+        <Route path='/completed' render={() => (
+          <>
+          <Header
+            handleLogout={(e) => this.handleLogout(e)}
+          />
+          <Completed
+            currentUser={this.state.currentUser}
+            planDetailsData={this.state.planDetailsData}
+            userProjects={this.state.userProjects}
+            deleteUserProjects={this.deleteUserProjects}
           />
           <Footer />
           </>

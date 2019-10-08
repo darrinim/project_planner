@@ -15,7 +15,7 @@ Project.init({
   name: Sequelize.STRING,
   description: Sequelize.TEXT,
   mvp: Sequelize.TEXT,
-  postmvp: Sequelize.TEXT,
+  postMvp: Sequelize.TEXT,
   status: Sequelize.INTEGER
 }, {
   sequelize: db,

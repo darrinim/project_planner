@@ -12,7 +12,7 @@ class PlanFullDetails extends React.Component {
       <div className="FullDetailsContainer">
         <div className="DetailsHeader">
           <h2>Project Name</h2>
-          <h4>By {this.props.currentUser.username}</h4>
+          <h4>By {this.props.currentUser && this.props.currentUser.username}</h4>
           <h5>Project Status</h5>
         </div>
         <form

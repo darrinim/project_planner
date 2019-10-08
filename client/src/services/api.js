@@ -4,15 +4,22 @@ const BASE_URL = 'http://localhost:3001/';
 
 const api = axios.create({ baseURL: BASE_URL });
 
-export const makeProject = async (project) => {
-  const resp = await api.post('/fulldetails', project);
+export const makeProject = async (project, userId) => {
+  const resp = await api.post(`/project/user/${userId}`, project);
   return resp.data;
 };
 
-export const oneLocation = async (location) => {
-  const loc = await api.get(`/location/${location}`);
-  return loc.data;
+export const getProjects = async (project, userId) => {
+  const resp = await api.get(`/project/user/${userId}`, project);
+  return resp.data;
+};
+
+export const deleteProject = async (projectId) => {
+    console.log('delete')
+  const resp = await api.delete(`/project/user/${projectId}`);
+  return resp.data;
 }
+
 
 export const allGear = async () => {
   const gear = await api.get(`/gear`);
@@ -47,6 +54,7 @@ export const deleteGear = async (gearId) => {
       console.log(e.message);
     };
 };
+
 
 export const getUser = async (userid) => {
   const resp = await api.get(`/auth${userid}`);

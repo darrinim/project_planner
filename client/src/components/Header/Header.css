@@ -1,5 +1,6 @@
 .headerContainer {
-  background-color: f9fce1;
+  background-color: #f9fce1;
+  height: 350px;
 }
 
 .navbar {
@@ -8,5 +9,15 @@
   justify-content: space-between;
   list-style-type: none;
   padding: 10px;
-  margin-top: 0;
+  margin: 0;
 }
+/* .dogHeader {
+  border: 1px solid black;
+  position: absolute;
+
+  height: 25em;
+  z-index: 1;
+  top: 8%;
+  left: 0;
+  right: 0;
+} */

@@ -9,26 +9,21 @@ body {
   height: 100%;
   width: 100%;
 } */
-img {
+.featuredImg {
   width: 100%;
+  display: none;
 }
 .container {
   /* border: 1px solid black; */
-  padding: 0 10px;
+  padding: 20px 10px 0 10px;
+  background-color: #fbd1b7;
 }
 .recommendedContainer {
   display: flex;
-  /* border-bottom: 1px solid black; */
-  /* margin-bottom: 20px; */
 }
-/* .recommendedDesc::after {
-  content: "";
-  display: block;
-  margin: 0 auto;
-  border-bottom: 1px solid black;
-  padding-top: 10px;
-  width: 80%;
-} */
+.featuredHeader {
+  margin-top: 0;
+}
 hr {
   display: block;
   width: 80%;

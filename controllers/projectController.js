@@ -49,9 +49,10 @@ projectController.put('/:id', async (req, res) => {
   }
 });
 
-projectController.delete('/:id', async (req, res) => {
+projectController.delete('/user/:id', async (req, res) => {
   try {
-    const project = await project.findByPk(req.params.id);
+    const project = await Project.findByPk(req.params.id);
+    console.log('THIS IS THE PROJECT IN BIGGER LETTERS', project);
     await project.destroy();
     res.json(project);
   } catch (e) {

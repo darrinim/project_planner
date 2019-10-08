@@ -24,7 +24,7 @@ class Form extends React.Component {
 
 
   render() {
-    // console.log('look at this one', this.props);
+    console.log('look at this one PLEASE', this.props);
     return (
       <div>
         <form
@@ -51,12 +51,13 @@ class Form extends React.Component {
             value={this.props.authLoginData.password}
             onChange={(e) => this.props.handleChange(e)}
             />
-          <button>Sign In</button>
+          <button
+            type="submit">Sign In</button>
         </form>
         <form
           className="registerForm"
           id="register"
-          onSubmit={this.props.handleRegister}
+          onSubmit={(e) => this.props.handleRegister(e)}
         >
           <input
             className="formInput"
