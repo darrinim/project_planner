@@ -6,12 +6,12 @@ const Footer = () => {
 
   return(
     <div className="FooterContainer">
-      <h2 className="FooterTitle">Kickstarter</h2>
+      <h2 className="FooterTitle">goodBoy</h2>
       <div>
         <ul className="FooterNav">
-          <li><i class="fab fa-facebook"></i></li>
-          <li><i class="fab fa-instagram"></i></li>
-          <li><i class="fab fa-twitter-square"></i></li>
+          <li><i className="fab fa-facebook fa-2x"></i></li>
+          <li><i className="fab fa-instagram fa-2x"></i></li>
+          <li><i className="fab fa-twitter-square fa-2x"></i></li>
         </ul>
       </div>
       <div>

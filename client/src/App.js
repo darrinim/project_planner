@@ -2,15 +2,15 @@ import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Featured from './components/Featured/Featured';
+import Testimonials from './components/Testimonials/Testimonials';
 import EmailSub from './components/EmailSub/EmailSub';
 import Footer from './components/Footer/Footer';
-import Project from './components/Project';
 import PlanName from './components/PlanName/PlanName';
 import PlanDescription from './components/PlanDescription/PlanDescription';
 import PlanFullDetails from './components/PlanFullDetails/PlanFullDetails';
 import Login from './components/Login/Login';
 import Completed from './components/Completed/Completed';
-import EditProjectForm from './components/EditProjectForm/EditProjectForm'
+import EditProjectForm from './components/EditProjectForm/EditProjectForm';
 
 import { loginUser, registerUser, getUser, makeProject, verifyUser, editProjects, getProjects, deleteProject } from './services/api';
 
@@ -263,9 +263,9 @@ class App extends React.Component {
             handleLogout={this.handleLogout}
           />
           <Featured />
+          <Testimonials />
           <EmailSub />
           <Footer />
-          <Project />
           </>
         )} />
         <Route path='/plan' render={() => (

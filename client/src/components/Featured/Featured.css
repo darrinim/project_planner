@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Chewy|EB+Garamond|Indie+Flower|Mansalva|Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Chewy|Indie+Flower|Montserrat+Alternates:400,500|Quicksand:300,400,500,600|Raleway:400,500|Vibes&display=swap');
 
 body {
-  font-family: 'Raleway';
+  font-family: 'Quicksand';
 }
 
 .landingHeader {
@@ -18,6 +18,31 @@ body {
   text-shadow: 2px 2px rgba(0,0,0,0.8);
 }
 
+.landingTagline {
+  /* border: 1px solid black; */
+  position: relative;
+  /* top: 0; */
+  bottom: 5em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px rgba(0,0,0,0.6);
+  font-weight: 600;
+}
+
+.landingSecTagline {
+  /* border: 1px solid black; */
+  position: relative;
+  bottom: 6em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px rgba(0,0,0,0.6);
+  font-weight: 600;
+}
+
 .featuredImage {
   background-image: url('https://res.cloudinary.com/darrin-im/image/upload/v1570337024/Screen_Shot_2019-10-06_at_12.41.05_AM_gdwkre.png');
   height: 100%;
@@ -28,15 +53,33 @@ body {
   /* display: none; */
 }
 .container {
-  /* border: 1px solid black; */
+  /* border: 1px solid red; */
   padding: 20px 10px 0 10px;
   background-color: #fbd1b7;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
 }
 .recommendedContainer {
   display: flex;
 }
 .featuredHeader {
-  margin-top: 0;
+  /* margin-top: 0; */
+  /* border: 1px solid black; */
+  text-align: center;
+  margin-top: 3em;
+}
+.featuredContainer {
+  /* border: 1px solid black; */
+  position: relative;
+  bottom: 9em;
+}
+div p {
+  margin: 0 auto;
+}
+.featProjectName {
+  margin-bottom: 10px;
+}
+.featProjectCreator {
+  margin-top: 10px;
 }
 hr {
   display: block;
