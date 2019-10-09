@@ -16,7 +16,8 @@ Project.init({
   description: Sequelize.TEXT,
   mvp: Sequelize.TEXT,
   postMvp: Sequelize.TEXT,
-  status: Sequelize.INTEGER
+  status: Sequelize.INTEGER,
+  user_id: Sequelize.INTEGER
 }, {
   sequelize: db,
   modelName: 'project',
@@ -44,27 +45,10 @@ User.init({
   modelName: 'user',
 });
 
-// class Itin extends Sequelize.Model {}
-// Itin.init({
-//   days: Sequelize.INTEGER
-// })
-// email: {
-//   type: Sequelize.STRING,
-//   unique: true,
-//   allowNull: false,
-//   validate: {
-//     isEmail: true,
-//   },
-// },
-// username: {
-//   type: Sequelize.STRING,
-//   allowNull: false,
-// },
-// password_digest: Sequelize.STRING,
-// }, {
+
 
 User.hasMany(Project)
-Project.hasMany(Timeline)
+Project.belongsTo(User)
 
 
 module.exports = {

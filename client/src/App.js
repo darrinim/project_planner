@@ -10,8 +10,9 @@ import PlanDescription from './components/PlanDescription/PlanDescription';
 import PlanFullDetails from './components/PlanFullDetails/PlanFullDetails';
 import Login from './components/Login/Login';
 import Completed from './components/Completed/Completed';
+import EditProjectForm from './components/EditProjectForm/EditProjectForm'
 
-import { allGear, oneGear, getGearName, deleteGear, createGear, loginUser, registerUser, tripGear, getTrip, userTrips, getUser, makeProject, deleteTrip, verifyUser, allTrips, oneTrip, getTg, getProjects, deleteProject } from './services/api';
+import { allGear, oneGear, getGearName, deleteGear, createGear, loginUser, registerUser, tripGear, getTrip, userTrips, getUser, makeProject, deleteTrip, verifyUser, allTrips, oneTrip, editProjects, getProjects, deleteProject } from './services/api';
 
 import './App.css';
 
@@ -38,7 +39,7 @@ class App extends React.Component {
       description: "",
       mvp: "",
       postMvp: "",
-      status: "",
+      status: ""
     },
     userProjects: []
   };
@@ -198,10 +199,39 @@ class App extends React.Component {
     )
   }
 
-  // editUserProjects = async (projectId) => {
-  //   const editProject = await editProjects(projectId);
-  //
-  // }
+  updateProject = async (e) => {
+    e.preventDefault();
+    const { projectId, ...data } = this.state.planDetailsData;
+    const project = await editProjects(data, projectId);
+    this.setState((prevState) => ({
+      userProjects: [...prevState.userProjects.filter((project) => project.id !== projectId), project],
+      planDetailsData: {
+        name: "",
+        description: "",
+        mvp: "",
+        postMvp: "",
+        status: ""
+      }
+    }));
+  }
+
+  showEditForm = (projectId) => {
+    const project = this.state.userProjects.find((project) => project.id === projectId);
+    const { name, description, mvp, postMvp, status} = project;
+    this.setState({
+      planDetailsData: {
+        name,
+        description,
+        mvp,
+        postMvp,
+        status
+      }
+    })
+  }
+
+  goToEdit = async (e) => {
+    this.props.history.push('/edit');
+  };
 
 
   async componentDidMount() {
@@ -287,6 +317,21 @@ class App extends React.Component {
             planDetailsData={this.state.planDetailsData}
             userProjects={this.state.userProjects}
             deleteUserProjects={this.deleteUserProjects}
+            goToEdit={this.goToEdit}
+          />
+          <Footer />
+          </>
+        )} />
+        <Route path='/edit' render={() => (
+          <>
+          <Header
+            handleLogout={(e) => this.handleLogout(e)}
+          />
+          <EditProjectForm
+            planDetailsData={this.state.planDetailsData}
+            userProjects={this.state.userProjects}
+            handlePlanChange={this.handlePlanChange}
+            handleSubmitPlan={this.handleSubmitPlan}
           />
           <Footer />
           </>

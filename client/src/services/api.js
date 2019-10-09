@@ -20,10 +20,15 @@ export const deleteProject = async (projectId) => {
   return resp.data;
 }
 
-export const editProjects = async (projectId) => {
-  const resp = await api.put(`/projects/${projectId}`);
-  return resp.data
-}
+
+export const editProjects = async (data, projectId) => {
+  try {
+    const project = await axios.put(`/projects/${projectId}`, data);
+    return project.data
+  } catch (e) {
+    console.log(e.message);
+  }
+};
 
 
 export const tripGear = async (tripId, gearId) => {
