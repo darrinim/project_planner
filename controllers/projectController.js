@@ -30,9 +30,7 @@ projectController.get('/user/:userId', async (req, res) => {
 // create new project
 projectController.post('/user/:userId', async (req, res) => {
   try {
-    console.log('THIS IS THE ONE YOU SHOULD BE LOOKING AT BUD', req.body);
     req.body.user_id = req.params.userId
-    console.log('THIS IS THE ONE YOU SHOULD BE LOOKING AT BUD', req.body);
     const project = await Project.create(req.body);
     res.json(project);
   } catch (e) {
@@ -55,7 +53,6 @@ projectController.put('/projects/:projectId', async (req, res) => {
 projectController.delete('/user/:id', async (req, res) => {
   try {
     const project = await Project.findByPk(req.params.id);
-    console.log('THIS IS THE PROJECT IN BIGGER LETTERS', project);
     await project.destroy();
     res.json(project);
   } catch (e) {

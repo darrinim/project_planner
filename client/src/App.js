@@ -12,7 +12,7 @@ import Login from './components/Login/Login';
 import Completed from './components/Completed/Completed';
 import EditProjectForm from './components/EditProjectForm/EditProjectForm'
 
-import { allGear, oneGear, getGearName, deleteGear, createGear, loginUser, registerUser, tripGear, getTrip, userTrips, getUser, makeProject, deleteTrip, verifyUser, allTrips, oneTrip, editProjects, getProjects, deleteProject } from './services/api';
+import { loginUser, registerUser, getUser, makeProject, verifyUser, editProjects, getProjects, deleteProject } from './services/api';
 
 import './App.css';
 
@@ -44,6 +44,10 @@ class App extends React.Component {
     userProjects: []
   };
 
+  /* ==============================================
+  =============HANDLECHANGE FUNCTIONS=============
+  ============================================== */
+
   handleChange = async (e) => {
     const { name, value } = e.target
     this.setState(prevState => ({
@@ -64,20 +68,9 @@ class App extends React.Component {
     }));
   };
 
-  handleLogout = () => {
-    this.setState({ currentUser: null });
-    localStorage.removeItem('jwt');
-    this.props.history.push('/');
-  };
-
-  checkUser = async () => {
-    const currentUser = await verifyUser();
-    // console.log('THIS IS THE CURRENT USER', currentUser);
-    if (currentUser) {
-      this.getUserProjects(currentUser);
-      this.setState({ currentUser });
-    }
-  };
+  /* ==============================================
+  =========REGISTER/LOGIN/LOGOUT FUNCTIONS========
+  ============================================== */
 
   handleLogin = async (e) => {
     e.preventDefault();
@@ -110,8 +103,10 @@ class App extends React.Component {
   handleRegister = async (e) => {
     e.preventDefault();
     if (this.state.authFormData.username !== "" && this.state.authFormData.email !== "" && this.state.authFormData.password !== "") {
-      await registerUser(this.state.authFormData);
-      this.handleLog(e);
+      const user = await registerUser(this.state.authFormData);
+      this.setState({
+        currentUser: user
+      })
     }
   };
 
@@ -121,6 +116,24 @@ class App extends React.Component {
     this.props.history.push('/');
   };
 
+  handleLogout = () => {
+    this.setState({ currentUser: null });
+    localStorage.removeItem('jwt');
+    this.props.history.push('/');
+  };
+
+  /* ==============================================
+  =================AUTH FUNCTIONS=================
+  ============================================== */
+
+  checkUser = async () => {
+    const currentUser = await verifyUser();
+    // console.log('THIS IS THE CURRENT USER', currentUser);
+    if (currentUser) {
+      this.getUserProjects(currentUser);
+      this.setState({ currentUser });
+    }
+  };
 
   handleAuth = async (e) => {
     const { name, value } = e.target
@@ -142,20 +155,9 @@ class App extends React.Component {
     }))
   };
 
-
-  handleGearClick = (e) => {
-    this.setState(prevState => ({
-      selectedGear: [...prevState.selectedGear, e]
-    }))
-  };
-
-  removeGearClick = async (e) => {
-    this.setState(prevState => ({
-      selectedGear: prevState.selectedGear.filter((ele, i) => i !== e)
-    })
-    )
-  };
-
+  /* ==============================================
+  =============SUBMIT FORMS FUNCTIONS=============
+  ============================================== */
 
   handleSubmitPlan = async (e) => {
     e.preventDefault();
@@ -178,9 +180,10 @@ class App extends React.Component {
     }));
   };
 
-  goToDetails = async (e) => {
-    this.props.history.push('/fulldetails');
-  };
+
+  /* ==============================================
+  =================CRUD FUNCTIONS=================
+  ============================================== */
 
   getUserProjects = async (currentUser) => {
     const allProjects = await getProjects(this.state.planDetailsData, currentUser.id);
@@ -188,7 +191,6 @@ class App extends React.Component {
       userProjects: allProjects
     })
   };
-
 
   deleteUserProjects = async (projectId) => {
     console.log('this is deleteUserProjects');
@@ -215,6 +217,10 @@ class App extends React.Component {
     }));
   }
 
+  /* ==============================================
+  ===============REDIRECT FUNCTIONS===============
+  ============================================== */
+
   showEditForm = (projectId) => {
     const project = this.state.userProjects.find((project) => project.id === projectId);
     const { name, description, mvp, postMvp, status} = project;
@@ -233,14 +239,18 @@ class App extends React.Component {
     this.props.history.push('/edit');
   };
 
+  goToDetails = async (e) => {
+    this.props.history.push('/fulldetails');
+  };
 
-  async componentDidMount() {
-    await this.checkUser();
+
+  componentDidMount() {
+    this.checkUser();
   };
 
 
   render() {
-    // console.log('this is App: state: currentUser',this.state.currentUser)
+    console.log('this is App: state: currentUser',this.state.currentUser)
     // console.log(this.state.planDetailsData)
     // console.log(this.state.currentUser.user.username && this.state.currentUser.user.username)
     return (
@@ -250,7 +260,7 @@ class App extends React.Component {
           <>
           <Header
             currentUser={this.state.currentUser}
-            handleLogout={(e) => this.handleLogout(e)}
+            handleLogout={this.handleLogout}
           />
           <Featured />
           <EmailSub />
@@ -261,7 +271,7 @@ class App extends React.Component {
         <Route path='/plan' render={() => (
           <>
           <Header
-            handleLogout={(e) => this.handleLogout(e)}
+            handleLogout={this.handleLogout}
           />
           <PlanName
             currentUser={this.state.currentUser}
@@ -290,19 +300,18 @@ class App extends React.Component {
           <>
           <Header
             {...props}
-            handleLogout={(e) => this.handleLogout(e)}
+            handleLogout={this.handleLogout}
           />
           <Login
             {...props}
             handleLogin={(e) => this.handleLogin(e)}
-            handleRegister={(e) => this.handleRegister(e)}
+            handleRegister={this.handleRegister}
             authFormData={this.state.authFormData}
             authLoginData={this.state.authLoginData}
             handleChange={this.handleAuthLogin}
             handleAuthChange={this.handleAuth}
             handleLog={(e) => this.handleLog(e)}
             handleSubmit={(e) => this.handleSubmit(e)}
-            handleRegisterClick={(e) => this.handleRegisterClick(e)}
           />
           <Footer />
           </>
@@ -310,7 +319,7 @@ class App extends React.Component {
         <Route path='/completed' render={() => (
           <>
           <Header
-            handleLogout={(e) => this.handleLogout(e)}
+            handleLogout={this.handleLogout}
           />
           <Completed
             currentUser={this.state.currentUser}
@@ -325,7 +334,7 @@ class App extends React.Component {
         <Route path='/edit' render={() => (
           <>
           <Header
-            handleLogout={(e) => this.handleLogout(e)}
+            handleLogout={this.handleLogout}
           />
           <EditProjectForm
             planDetailsData={this.state.planDetailsData}

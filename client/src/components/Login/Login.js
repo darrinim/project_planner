@@ -13,7 +13,6 @@ class Login extends React.Component {
 
 
 handleChange = (e) => {
-  console.log('this is handleChange', e.target.value);
   this.setState({
     username: e.target.value,
     password: e.target.value,
@@ -31,7 +30,6 @@ handleSubmit = (e) => {
 
 
   render() {
-    console.log('this is Login - props', this.props)
     return(
       <>
       <Form

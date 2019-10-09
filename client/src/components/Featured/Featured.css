@@ -1,17 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Chewy|EB+Garamond|Indie+Flower|Mansalva|Vibes&display=swap');
 
 body {
   font-family: 'Raleway';
 }
 
-/* .featuredImage {
+.landingHeader {
+  /* border: 1px solid black; */
+  text-align: center;
+  position: relative;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  color: white;
+  font-size: 4em;
+  font-family: 'chewy';
+  text-shadow: 2px 2px rgba(0,0,0,0.8);
+}
+
+.featuredImage {
   background-image: url('https://res.cloudinary.com/darrin-im/image/upload/v1570337024/Screen_Shot_2019-10-06_at_12.41.05_AM_gdwkre.png');
   height: 100%;
   width: 100%;
-} */
+}
 .featuredImg {
   width: 100%;
-  display: none;
+  /* display: none; */
 }
 .container {
   /* border: 1px solid black; */

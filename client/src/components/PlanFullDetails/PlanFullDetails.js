@@ -7,7 +7,6 @@ class PlanFullDetails extends React.Component {
   }
 
   render() {
-    console.log('maybe props', this.props);
     return(
       <div className="FullDetailsContainer">
         <div className="DetailsHeader">

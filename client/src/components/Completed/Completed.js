@@ -6,14 +6,8 @@ class Completed extends React.Component {
   constructor(props) {
     super(props)
   }
-//component did mount, get all projects with user_id of 35. axios.get(`project/user${this.props.curentuser.id}`)
-
-// async componentDidMount() {
-//   await this.props.userProjects
-// }
 
   render() {
-    console.log('LOOK AT THIS ONE PLZ', this.props);
     return (
       <div className="CompletedContainer">
         <div>{this.props.userProjects && this.props.userProjects.map(el => {

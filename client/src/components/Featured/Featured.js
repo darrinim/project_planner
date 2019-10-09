@@ -6,6 +6,7 @@ const Featured = () => {
 
   return (
     <div className="container">
+      <h1 className="landingHeader">goodBoy</h1>
       <h3 className="featuredHeader">Featured Projects</h3>
 
       <div className="featuredContainer">
