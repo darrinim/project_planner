@@ -14,3 +14,7 @@
   flex-direction: column;
   margin-top: 30px;
 }
+.FullDetailsContainer {
+  overflow: hidden;
+  background-color: #CAE3FD;
+}

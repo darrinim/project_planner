@@ -26,10 +26,11 @@
 }
 .formContainer {
   /* border: 1px solid black; */
-  margin-top: 40px;
+  /* margin-top: 40px; */
   padding-bottom: 40px;
   /* background-color: #F1E1FC; */
   background-color: #CAE3FD;
+  overflow: hidden;
 }
 .LoginContinueForm {
   max-width: 400px;

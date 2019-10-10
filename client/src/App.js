@@ -182,6 +182,16 @@ class App extends React.Component {
   };
 
 
+  handleSubmitEdits = async (e) => {
+    e.preventDefault();
+    const newProject = await makeProject(this.state.planDetailsData, this.state.currentUser.id);
+    this.setState(prevState => ({
+      userProjects: [ ...prevState.userProjects, newProject]
+    }))
+    this.props.history.push('/completed')
+  };
+
+
   /* ==============================================
   =================CRUD FUNCTIONS=================
   ============================================== */
@@ -204,10 +214,10 @@ class App extends React.Component {
 
   updateProject = async (e) => {
     e.preventDefault();
-    const { projectId, ...data } = this.state.planDetailsData;
-    const project = await editProjects(data, projectId);
+    const { id, ...data } = this.state.planDetailsData;
+    const updatedProject = await editProjects(data, id);
     this.setState((prevState) => ({
-      userProjects: [...prevState.userProjects.filter((project) => project.id !== projectId), project],
+      userProjects: prevState.userProjects.map((project) => project.id === id ? updatedProject : project),
       planDetailsData: {
         name: "",
         description: "",
@@ -216,24 +226,17 @@ class App extends React.Component {
         status: ""
       }
     }));
+    this.props.history.push('/completed')
   }
 
   /* ==============================================
   ===============REDIRECT FUNCTIONS===============
   ============================================== */
 
-  showEditForm = (projectId) => {
-    const project = this.state.userProjects.find((project) => project.id === projectId);
-    const { name, description, mvp, postMvp, status} = project;
-    this.setState({
-      planDetailsData: {
-        name,
-        description,
-        mvp,
-        postMvp,
-        status
-      }
-    })
+  showEditForm = (project) => {
+    const {createdAt, updatedAt, userId, user_id, ...planDetailsData} = project;
+    this.setState({planDetailsData})
+    this.props.history.push('/edit')
   }
 
   goToEdit = async (e) => {
@@ -327,6 +330,8 @@ class App extends React.Component {
             userProjects={this.state.userProjects}
             deleteUserProjects={this.deleteUserProjects}
             goToEdit={this.goToEdit}
+
+            showEditForm={this.showEditForm}
           />
           <Footer />
           </>
@@ -337,10 +342,14 @@ class App extends React.Component {
             handleLogout={(e) => this.handleLogout(e)}
           />
           <EditProjectForm
+            currentUser={this.state.currentUser}
+            updateProject={this.updateProject}
             planDetailsData={this.state.planDetailsData}
             userProjects={this.state.userProjects}
+            showEditForm={(e) => this.showEditForm(e)}
             handlePlanChange={this.handlePlanChange}
             handleSubmitPlan={this.handleSubmitPlan}
+            handleSubmitEdits={this.handleSubmitEdits}
           />
           <Footer />
           </>

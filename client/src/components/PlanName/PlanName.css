@@ -1,7 +1,9 @@
 .PlanNameContainer {
   height: 300px;
   text-align: center;
-  margin-top: 20%;
+  padding: 20% 0;
+  overflow: hidden;
+  background-color: #fbd1b7;
 }
 .formName {
   display: flex;

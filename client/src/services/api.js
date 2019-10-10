@@ -22,10 +22,10 @@ export const deleteProject = async (projectId) => {
   return resp.data;
 }
 
-
+{/*below is getProject*/}
 export const editProjects = async (data, projectId) => {
   try {
-    const project = await axios.put(`/projects/${projectId}`, data);
+    const project = await api.put(`/project/${projectId}`, data);
     return project.data
   } catch (e) {
     console.log(e.message);

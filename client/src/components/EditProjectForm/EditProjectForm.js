@@ -7,16 +7,23 @@ class EditProjectForm extends React.Component {
   }
 
   render() {
+    console.log('this is props on editprojectform', this.props);
     return(
+
       <div className="FullDetailsContainer">
         <div className="DetailsHeader">
           <h2>{this.props.planDetailsData.name}</h2>
           <h4>By {this.props.currentUser && this.props.currentUser.username}</h4>
           <h5>Project Status</h5>
         </div>
+
+
+
         <form
+          currentUser={this.props.currentUser}
+          userProjects={this.props.userProjects}
           className="FullDetailsForm"
-          onSubmit={this.props.handleSubmitPlan}>
+          onSubmit={this.props.updateProject}>
           <label for="description">Description: </label>
           <input
             type="text"
@@ -45,11 +52,15 @@ class EditProjectForm extends React.Component {
               value={this.props.planDetailsData.status}
               onChange={this.props.handlePlanChange}
           />
-          <button type="submit">Save Plan</button>
+          <button
+            className="saveButton"
+            type="submit">Save Plan</button>
         </form>
-      </div>
+
+</div>
     )
   }
 }
+
 
 export default EditProjectForm;

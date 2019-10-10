@@ -7,6 +7,7 @@ class PlanFullDetails extends React.Component {
   }
 
   render() {
+        console.log('this is props on planFullDetailsprojectform', this.props);
     return(
       <div className="FullDetailsContainer">
         <div className="DetailsHeader">
