@@ -20,32 +20,6 @@ const Featured = () => {
         <h5 className="featProjectCreator">By Robert DiScipio, Aaron Kim, Darrin Im</h5>
       </div>
 
-{/*     <div className="recommendedContainer">
-        <img className="recommendedPhoto"src="https://res.cloudinary.com/darrin-im/image/upload/v1570338493/Screen_Shot_2019-10-06_at_1.07.16_AM_gc8c5r.png"/>
-        <div className="recommendedDesc">
-          <h3>Project Name</h3>
-          <h5>By Robert DiScipio, Aaron Kim, Darrin Im</h5>
-        </div>
-      </div>
-      <hr />
-
-      <div className="recommendedContainer">
-        <img className="recommendedPhoto"src="https://res.cloudinary.com/darrin-im/image/upload/v1570338493/Screen_Shot_2019-10-06_at_1.07.16_AM_gc8c5r.png"/>
-        <div className="recommendedDesc">
-          <h3>Project Name</h3>
-          <h5>By Robert DiScipio, Aaron Kim, Darrin Im</h5>
-        </div>
-      </div>
-      <hr />
-
-      <div className="recommendedContainer">
-        <img className="recommendedPhoto"src="https://res.cloudinary.com/darrin-im/image/upload/v1570338493/Screen_Shot_2019-10-06_at_1.07.16_AM_gc8c5r.png"/>
-        <div className="recommendedDesc">
-          <h3>Project Name</h3>
-          <h5>By Robert DiScipio, Aaron Kim, Darrin Im</h5>
-        </div>
-      </div>   */}
-
     </div>
   )
 }

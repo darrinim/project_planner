@@ -28,4 +28,13 @@ ul {
 .FooterTitle {
   margin: 0;
   padding-top: 15px;
+  /* color: black; */
+  font-size: 3em;
+  font-family: 'chewy';
+  text-shadow: 2px 2px rgba(0,0,0,0.8);
+  color: #fbd1b7;
+  /* color: #CAE3FD; */
+}
+.fab {
+  color: black;
 }

@@ -20,7 +20,7 @@
   margin: 0 auto;
   z-index: 1;
   top: 12%;
-  left: 0;
+  left: 0px;
   right: 0;
 }
 
@@ -28,7 +28,7 @@
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: absolute;
+  position: fixed;
   width: 30px;
   height: 25px;
   right: 36px;
@@ -68,14 +68,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: #d3f6f3;
+    background-color: #CAE3FD;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #d3f6f3;
+  fill: #CAE3FD;
 }
 
 /* Wrapper for item list */
@@ -98,4 +98,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
   text-decoration: none;
   font-size: 25px;
   line-height: 2em;
+  font-weight: bold;
+}
+.linkStyle:hover {
+  text-decoration: underline;
+  color: darkgray;
 }

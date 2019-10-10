@@ -32,9 +32,7 @@ class Form extends React.Component {
           className="LoginContinueForm"
           onSubmit={(e) => this.props.handleLog(e)}
         >
-          <h4
-            className="formHeader">Have an account? Log in</h4>
-          <h3>Please Sign In to continue, or Register below!</h3>
+          <h3 className="formRegisterTag">Please Sign In to continue, or Register below!</h3>
           <label for="username">Username: </label>
           <input
             type="text"
