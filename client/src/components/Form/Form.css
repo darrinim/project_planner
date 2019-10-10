@@ -1,5 +1,68 @@
-.registerForm {
+/* .registerForm {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
+} */
+.registerForm {
+  border: 1px solid #black;
+  max-width: 400px;
+  margin: 30px 20px;
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow:
+  1px 4px 12px rgba(255,255,255,0.4),
+  1px 6px 8px rgba(0,0,0,0.3),
+  2px 8px 24px rgba(255,255,255,0.4);
+  background-color: #7EBCFD;
+}
+.formContainer {
+  /* border: 1px solid black; */
+  margin-top: 40px;
+  padding-bottom: 40px;
+  /* background-color: #F1E1FC; */
+  background-color: #CAE3FD;
+}
+.LoginContinueForm {
+  max-width: 400px;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow:
+  1px 4px 12px rgba(255,255,255,0.4),
+  1px 6px 8px rgba(0,0,0,0.3),
+  2px 8px 24px rgba(255,255,255,0.4);
+    margin: 30px 20px;
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #7EBCFD;
+}
+.formHeader {
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+div form h3 {
+  margin-bottom: 10%;
+}
+div form input {
+  padding: 10px 0;
+  margin: 10px 0;
+  background-color: rgba(203, 228, 252, 0.9);
+}
+.submit {
+  margin: 10px 0 40px 0;
+  padding: 10px 0;
 }

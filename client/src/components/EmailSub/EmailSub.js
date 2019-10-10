@@ -10,7 +10,6 @@ class EmailSub extends React.Component {
         <h2>Discover other projects!</h2>
         <h3>Sign up for our newsletter</h3>
         <input type="text" placeholder="Enter your email"/>
-        <hr />
       </div>
     )
   }

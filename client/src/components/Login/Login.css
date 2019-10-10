@@ -1,17 +1,1 @@
-.LoginContinueForm {
-  border: 1px solid black;
-  margin: 0 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  height: 300px;
-}
-.formHeader {
-  border-bottom: 1px solid black;
-}
-div form h3 {
-  margin-bottom: 20%;
-}
-div form input {
-  margin: 10px 0;
-}
+

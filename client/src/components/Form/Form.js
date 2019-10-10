@@ -26,7 +26,7 @@ class Form extends React.Component {
   render() {
     // console.log('look at this one PLEASE', this.props);
     return (
-      <div>
+      <div className="formContainer">
         <form
           id="login"
           className="LoginContinueForm"
@@ -34,7 +34,7 @@ class Form extends React.Component {
         >
           <h4
             className="formHeader">Have an account? Log in</h4>
-          <h3>Please sign in to continue</h3>
+          <h3>Please Sign In to continue, or Register below!</h3>
           <label for="username">Username: </label>
           <input
             type="text"
@@ -52,6 +52,7 @@ class Form extends React.Component {
             onChange={(e) => this.props.handleChange(e)}
             />
           <button
+            className="submit"
             type="submit">Sign In</button>
         </form>
         <form
@@ -59,6 +60,8 @@ class Form extends React.Component {
           id="register"
           onSubmit={(e) => this.props.handleRegister(e)}
         >
+          <h3>Register below!</h3>
+          <label for="password">Email: </label>
           <input
             className="formInput"
             type="text"
@@ -67,6 +70,7 @@ class Form extends React.Component {
             value={this.props.authFormData.email}
             onChange={this.props.handleAuthChange}
           />
+          <label for="username">Username: </label>
           <input
             className="formInput"
             type="text"
@@ -75,6 +79,7 @@ class Form extends React.Component {
             value={this.props.authFormData.username}
             onChange={this.props.handleAuthChange}
           />
+          <label for="password">Password: </label>
           <input
             className="formInput"
             type="password"

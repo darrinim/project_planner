@@ -1,0 +1,19 @@
+.headerLogged {
+  background-color: #f9fce1;
+  height: 90px;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+}
+.dogMenu {
+  height: 70%;
+  padding-top: 15px;
+  transform: rotate(355deg);
+}

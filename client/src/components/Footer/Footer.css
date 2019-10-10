@@ -10,7 +10,7 @@ ul {
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  background-repeat: no-repeat;
+  background-color: #f9fce1;
 }
 .FooterNav {
   display: flex;
@@ -25,5 +25,6 @@ ul {
   margin: 0;
 }
 .FooterTitle {
-  margin-bottom: 0;
+  margin: 0;
+  padding-top: 15px;
 }

@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Chewy|Indie+Flower|Montserrat+Alternates:400,500|Quicksand:300,400,500,600|Raleway:400,500|Vibes&display=swap');
 
+body::before {
+  content: "";
+  position: fixed;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  box-shadow: 0px 0 5px rgba(0, 0, 0, 0.2);
+  /* z-index: 100; */
+}
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  box-shadow: 0px 0 14px rgba(0, 0, 0, 0.2);
+  /* z-index: 100; */
+}
+
 body {
   font-family: 'Quicksand';
 }
@@ -45,8 +66,10 @@ body {
 
 .featuredImage {
   background-image: url('https://res.cloudinary.com/darrin-im/image/upload/v1570337024/Screen_Shot_2019-10-06_at_12.41.05_AM_gdwkre.png');
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
+  /* transform: rotate(30deg); */
+  /* border: 1px solid black; */
 }
 .featuredImg {
   width: 100%;
@@ -56,7 +79,10 @@ body {
   /* border: 1px solid red; */
   padding: 20px 10px 0 10px;
   background-color: #fbd1b7;
-    border-bottom: 1px solid rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+        box-shadow:
+          1px 1px 4px rgba(255,255,255,0.4),
+          2px 2px 9px rgba(0, 0, 0, 0.4);
 }
 .recommendedContainer {
   display: flex;

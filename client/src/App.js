@@ -11,6 +11,7 @@ import PlanFullDetails from './components/PlanFullDetails/PlanFullDetails';
 import Login from './components/Login/Login';
 import Completed from './components/Completed/Completed';
 import EditProjectForm from './components/EditProjectForm/EditProjectForm';
+import HeaderLoggedIn from './components/HeaderLoggedIn/HeaderLoggedIn';
 
 import { loginUser, registerUser, getUser, makeProject, verifyUser, editProjects, getProjects, deleteProject } from './services/api';
 
@@ -270,8 +271,8 @@ class App extends React.Component {
         )} />
         <Route path='/plan' render={() => (
           <>
-          <Header
-            handleLogout={this.handleLogout}
+          <HeaderLoggedIn
+            handleLogout={(e) => this.handleLogout(e)}
           />
           <PlanName
             currentUser={this.state.currentUser}
@@ -284,7 +285,7 @@ class App extends React.Component {
         )} />
         <Route path='/fulldetails' render={() => (
           <>
-          <Header
+          <HeaderLoggedIn
             handleLogout={(e) => this.handleLogout(e)}
           />
           <PlanFullDetails
@@ -298,9 +299,8 @@ class App extends React.Component {
         )} />
         <Route path='/login' render={(props) => (
           <>
-          <Header
-            {...props}
-            handleLogout={this.handleLogout}
+          <HeaderLoggedIn
+            handleLogout={(e) => this.handleLogout(e)}
           />
           <Login
             {...props}
@@ -318,8 +318,8 @@ class App extends React.Component {
         )} />
         <Route path='/completed' render={() => (
           <>
-          <Header
-            handleLogout={this.handleLogout}
+          <HeaderLoggedIn
+            handleLogout={(e) => this.handleLogout(e)}
           />
           <Completed
             currentUser={this.state.currentUser}
@@ -333,8 +333,8 @@ class App extends React.Component {
         )} />
         <Route path='/edit' render={() => (
           <>
-          <Header
-            handleLogout={this.handleLogout}
+          <HeaderLoggedIn
+            handleLogout={(e) => this.handleLogout(e)}
           />
           <EditProjectForm
             planDetailsData={this.state.planDetailsData}
