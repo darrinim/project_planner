@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const BASE_URL = 'http://localhost:3001/';
+const BASE_URL = 'https://dev-dog--planner.herokuapp.com';
 const api = axios.create({ baseURL: BASE_URL });
 
 /* ==============================================
@@ -37,7 +37,7 @@ export const editProjects = async (data, projectId) => {
 ============================================== */
 
 export const getUser = async (userid) => {
-  const resp = await api.get(`/auth${userid}`);
+  const resp = await api.get(`/auth/${userid}`);
   return resp.data;
 }
 
