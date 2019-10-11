@@ -4,6 +4,7 @@
   padding: 20% 0;
   overflow: hidden;
   background-color: #fbd1b7;
+  margin-top: 80px;
 }
 .formName {
   display: flex;
@@ -22,7 +23,14 @@
 .PlanNextButton {
   margin-top: 5px;
   height: 30px;
-  background-color: white;
+  background-color: #FDE5E4;
+  border-radius: 5px;
+}
+.planNameDog {
+  height: 14%;
+  position: absolute;
+  top: 45%;
+  right: 2%;
 }
 
 @media(min-width: 768px) {

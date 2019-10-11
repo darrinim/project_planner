@@ -8,7 +8,6 @@ class Completed extends React.Component {
   }
 
   render() {
-    console.log('this is firing completed', this.props);
     return (
       <div className="CompletedContainer">
       <div className="completedHeaderCont">

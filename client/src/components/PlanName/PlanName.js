@@ -7,7 +7,6 @@ class PlanName extends React.Component {
   }
 
   render() {
-    // console.log('this is what to look for', this.props.planDetailsData);
 
     return (
       <div className="PlanNameContainer">

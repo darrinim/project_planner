@@ -32,15 +32,15 @@ handleSubmit = (e) => {
   render() {
     return(
       <>
-      <Form
-        handleAuthChange={(e) => this.props.handleAuthChange(e)}
-        handleLogin={(e) => this.props.handleLogin(e)}
-        authFormData={this.props.authFormData}
-        authLoginData={this.props.authLoginData}
-        handleRegister={this.props.handleRegister}
-        handleChange={this.props.handleChange}
-        handleLog={this.props.handleLog}
-      />
+        <Form
+          handleAuthChange={(e) => this.props.handleAuthChange(e)}
+          handleLogin={(e) => this.props.handleLogin(e)}
+          authFormData={this.props.authFormData}
+          authLoginData={this.props.authLoginData}
+          handleRegister={(e) => this.props.handleRegister(e)}
+          handleChange={this.props.handleChange}
+          handleLog={this.props.handleLog}
+        />
       </>
     )
   };

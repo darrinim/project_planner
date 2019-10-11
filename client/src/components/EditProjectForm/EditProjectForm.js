@@ -17,8 +17,6 @@ class EditProjectForm extends React.Component {
           <h5>Project Status</h5>
         </div>
 
-
-
         <form
           currentUser={this.props.currentUser}
           userProjects={this.props.userProjects}
@@ -30,21 +28,21 @@ class EditProjectForm extends React.Component {
             name="description"
             value={this.props.planDetailsData.description}
             onChange={this.props.handlePlanChange}
-            />
+          />
           <label for="mvp">MVP: </label>
           <input
             type="text"
             name="mvp"
             value={this.props.planDetailsData.mvp}
             onChange={this.props.handlePlanChange}
-            />
+          />
           <label for="postMvp">Post MVP: </label>
           <input
             type="text"
             name="postMvp"
             value={this.props.planDetailsData.postMvp}
             onChange={this.props.handlePlanChange}
-            />
+          />
           <label for="status">Status: </label>
           <input
               type="status"
@@ -57,7 +55,7 @@ class EditProjectForm extends React.Component {
             type="submit">Save Plan</button>
         </form>
 
-</div>
+      </div>
     )
   }
 }

@@ -117,6 +117,7 @@ class App extends React.Component {
       this.setState({
         currentUser: user
       })
+            this.props.history.push('/plan');
     }
   };
 
@@ -262,13 +263,11 @@ class App extends React.Component {
 
 
   render() {
-    console.log('this is App: state: currentUser',this.state.currentUser)
-    // console.log(this.state.planDetailsData)
-    // console.log(this.state.currentUser.user.username && this.state.currentUser.user.username)
     return (
       <div className="App">
         <Switch>
-        <Route exact path='/' render={() => (
+
+          <Route exact path='/' render={() => (
           <>
           <Header
             currentUser={this.state.currentUser}
@@ -280,7 +279,8 @@ class App extends React.Component {
           <Footer />
           </>
         )} />
-        <Route path='/plan' render={() => (
+
+          <Route path='/plan' render={() => (
           <>
           <HeaderLoggedIn
             handleLogout={(e) => this.handleLogout(e)}
@@ -294,7 +294,8 @@ class App extends React.Component {
           <Footer />
           </>
         )} />
-        <Route path='/fulldetails' render={() => (
+
+          <Route path='/fulldetails' render={() => (
           <>
           <HeaderLoggedIn
             handleLogout={(e) => this.handleLogout(e)}
@@ -312,7 +313,8 @@ class App extends React.Component {
           <Footer />
           </>
         )} />
-        <Route path='/login' render={(props) => (
+
+          <Route path='/login' render={(props) => (
           <>
           <HeaderLoggedIn
             handleLogout={(e) => this.handleLogout(e)}
@@ -320,7 +322,7 @@ class App extends React.Component {
           <Login
             {...props}
             handleLogin={(e) => this.handleLogin(e)}
-            handleRegister={this.handleRegister}
+            handleRegister={(e) => this.handleRegister(e)}
             authFormData={this.state.authFormData}
             authLoginData={this.state.authLoginData}
             handleChange={this.handleAuthLogin}
@@ -331,7 +333,8 @@ class App extends React.Component {
           <Footer />
           </>
         )} />
-        <Route path='/completed' render={() => (
+
+          <Route path='/completed' render={() => (
           <>
           <HeaderLoggedIn
             handleLogout={(e) => this.handleLogout(e)}
@@ -348,7 +351,8 @@ class App extends React.Component {
           <Footer />
           </>
         )} />
-        <Route path='/edit' render={() => (
+
+          <Route path='/edit' render={() => (
           <>
           <HeaderLoggedIn
             handleLogout={(e) => this.handleLogout(e)}

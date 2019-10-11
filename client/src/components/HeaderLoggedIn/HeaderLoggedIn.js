@@ -12,12 +12,10 @@ class HeaderLoggedIn extends React.Component {
   render() {
     const loggedIn = this.props.currentUser !== null ?
       <Link className="linkStyle" to="/plan">Start a Project</Link>  : <Link className="linkStyle" to="/login">Start a Project</Link>
+
       return (
         <div className="headerLogged">
           <Menu right>
-
-
-
             {loggedIn}
             <Link className="linkStyle" to="/">Home</Link>
             <Link className="linkStyle" to="/login">Login</Link>

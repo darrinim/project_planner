@@ -58,7 +58,9 @@ class Form extends React.Component {
           id="register"
           onSubmit={(e) => this.props.handleRegister(e)}
         >
-          <h3>Register below!</h3>
+          <div className="test">
+            <h3 className="registerTag">Register below!</h3>
+          </div>
           <label for="password">Email: </label>
           <input
             className="formInput"

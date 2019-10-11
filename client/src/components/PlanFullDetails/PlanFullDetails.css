@@ -17,6 +17,7 @@
 .FullDetailsContainer {
   overflow: hidden;
   background-color: #CAE3FD;
+  margin-top: 90px;
 }
 .goodBoyButton {
   z-index: 1;
@@ -46,11 +47,15 @@
 @media(min-width: 768px) {
   .FullDetailsContainer {
     padding: 0 400px;
+    margin-top: 90px;
   }
   .fullDetailsDog {
     width: 30%;
     position: relative;
     top: 44px;
     transform: rotate(8deg);
+  }
+  .FullDetailsForm {
+    padding-bottom: 40px;
   }
 }

@@ -15,11 +15,11 @@ const Footer = () => {
         </ul>
       </div>
       <div>
-      <ul className="FooterTerms">
-        <li>Trust and Safety</li>
-        <li>Terms of Use</li>
-        <li>Privacy Policy</li>
-      </ul>
+        <ul className="FooterTerms">
+          <li>Trust and Safety</li>
+          <li>Terms of Use</li>
+          <li>Privacy Policy</li>
+        </ul>
       </div>
     </div>
   )

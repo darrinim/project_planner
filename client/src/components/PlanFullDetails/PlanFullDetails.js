@@ -52,9 +52,9 @@ class PlanFullDetails extends React.Component {
             className="savePlanButton"
             type="submit">Save Plan</button>
         </form>
-        <button
+{/*        <button
           className="goodBoyButton"
-          onClick={() => this.props.setVisible()}>BUTTTONN</button>
+          onClick={() => this.props.setVisible()}>BUTTTONN</button>     */}
       </div>
     )
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Featured.css'
+import './Featured.css';
 
 const Featured = () => {
 
