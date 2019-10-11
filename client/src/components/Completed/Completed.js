@@ -11,7 +11,12 @@ class Completed extends React.Component {
     console.log('this is firing completed', this.props);
     return (
       <div className="CompletedContainer">
-
+      <div className="completedHeaderCont">
+      <h2 className="completedHeader">In Pawgress!</h2>
+      <img
+        className="dogWinkFace wiggler"
+        src="https://res.cloudinary.com/darrin-im/image/upload/v1570761245/DogWink-final_kzsm8k.png"/>
+      </div>
         <div className="desktopDiv">{this.props.userProjects && this.props.userProjects.map(el => {
           return (
 

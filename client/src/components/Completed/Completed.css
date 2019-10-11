@@ -27,6 +27,35 @@
     font-size: 14px;
     cursor: pointer;
 }
+.completedHeader {
+  text-align: center;
+  font-size:
+}
+.dogWinkFace {
+  width: 20%;
+  transform: rotate(12deg);
+}
+.dogWinkFace:hover {
+  cursor: grab;
+}
+.completedHeaderCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes wiggle {
+	0% {transform:rotate(-15deg);}
+	50% {transform:rotate(60deg);}
+	100% {transform:rotate(-15deg);}
+}
+
+
+.wiggler:hover {
+	/* wiggle 0.5s infinite; */
+  /* wiggle 0.5s infinite; */
+	animation: wiggle 0.55s infinite;
+}
 
 @media (min-width: 768px) {
   .usersProjects {
@@ -35,9 +64,15 @@
     max-width: 350px;
     margin: 30px auto;
   }
+  .dogWinkFace {
+    width: 8%;
+  }
   .desktopDiv {
     /* width: 80%;
     display: flex;
     justify-content: space-between; */
+  }
+  .completedHeader {
+    font-size: 35px;
   }
 }

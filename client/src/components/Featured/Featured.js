@@ -7,7 +7,7 @@ const Featured = () => {
   return (
     <div className="container">
       <h1 className="landingHeader">goodBoy</h1>
-      <h2 className="landingTagline">Your favorite emotional support developer dog.</h2>
+      <h2 className="landingTagline">Your favorite emotional support dev-dog.</h2>
       <h2 className="landingSecTagline">Here to make your project planning a real treat!</h2>
 
 
