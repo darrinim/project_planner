@@ -6,7 +6,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.4);
   background-color: #fbd1b7;
 }
 .emailSubmit {
@@ -25,4 +25,12 @@
 }
 .emailInput::placeholder {
   color: black;
+}
+
+@media (min-width: 768px) {
+  .emailHeadline {
+    font-size: 28px;
+    width: 60%;
+    margin: 0 auto;
+  }
 }

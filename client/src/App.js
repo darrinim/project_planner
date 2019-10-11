@@ -12,6 +12,7 @@ import Login from './components/Login/Login';
 import Completed from './components/Completed/Completed';
 import EditProjectForm from './components/EditProjectForm/EditProjectForm';
 import HeaderLoggedIn from './components/HeaderLoggedIn/HeaderLoggedIn';
+import Modal from './components/Modal/Modal';
 
 import { loginUser, registerUser, getUser, makeProject, verifyUser, editProjects, getProjects, deleteProject } from './services/api';
 
@@ -23,6 +24,7 @@ class App extends React.Component {
   }
   state = {
     currentUser: null,
+    visible: false,
     form: {
       username: "",
     },
@@ -44,6 +46,13 @@ class App extends React.Component {
     },
     userProjects: []
   };
+
+  setVisible = () => {
+    this.setState({
+      visible: !this.state.visible
+    })
+  }
+
 
   /* ==============================================
   =============HANDLECHANGE FUNCTIONS=============
@@ -181,7 +190,6 @@ class App extends React.Component {
     }));
   };
 
-
   handleSubmitEdits = async (e) => {
     e.preventDefault();
     const newProject = await makeProject(this.state.planDetailsData, this.state.currentUser.id);
@@ -296,7 +304,11 @@ class App extends React.Component {
             planDetailsData={this.state.planDetailsData}
             handlePlanChange={this.handlePlanChange}
             handleSubmitPlan={this.handleSubmitPlan}
+            setVisible={this.setVisible}
           />
+
+          <Modal
+            visible={this.state.visible}/>
           <Footer />
           </>
         )} />
@@ -350,6 +362,7 @@ class App extends React.Component {
             handlePlanChange={this.handlePlanChange}
             handleSubmitPlan={this.handleSubmitPlan}
             handleSubmitEdits={this.handleSubmitEdits}
+
           />
           <Footer />
           </>

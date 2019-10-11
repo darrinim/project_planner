@@ -1,8 +1,13 @@
 .CompletedContainer {
   background-color: #fbd1b7;
   overflow: hidden;
+  margin: 0 auto;
 }
-
+.usersLiName {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 .usersProjects {
   border: 1px solid rgba(0,0,0,0.3);
   padding: 20px 20px;
@@ -13,7 +18,7 @@
   margin: 20px 30px;
 }
 .completedButtons {
-  padding: 5px 10px;
+  padding: 5px 40px;
   margin: 5px 10px 5px 0;
   border-radius: 10px;
   box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
@@ -21,4 +26,18 @@
     /* border: none; */
     font-size: 14px;
     cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .usersProjects {
+    border: 3px solid rgba(0,0,0,0.5);
+    text-align: center;
+    max-width: 350px;
+    margin: 30px auto;
+  }
+  .desktopDiv {
+    /* width: 80%;
+    display: flex;
+    justify-content: space-between; */
+  }
 }

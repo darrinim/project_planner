@@ -16,6 +16,7 @@ class Header extends React.Component {
         <div className="headerContainer">
           <Menu right>
             {loggedIn}
+            <Link className="linkStyle" to="/">Home</Link>
             <Link className="linkStyle" to="/login">Login</Link>
             <Link className="linkStyle"
             onClick={this.props.handleLogout}>Log out</Link>

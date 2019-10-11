@@ -1,0 +1,25 @@
+/* .Modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+} */
+
+.active {
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+  color: white;
+  transition: all 0.5s;
+}
+
+.passive {
+  opacity: 0;
+  transition: all 0.5s;
+}

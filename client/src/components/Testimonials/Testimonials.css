@@ -44,3 +44,23 @@
     line-height: 30px;
     margin: 0 40px;
 }
+
+
+@media (min-width: 768px) {
+  .testimonials {
+    width: 100%;
+  }
+  .testimonialDog {
+    /* border: 1px solid green; */
+    width: 25%;
+    position: relative;
+    /* bottom: 7.5em; */
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    transform: rotate(10deg);
+  }
+  .testimonialsHeader {
+    font-size: 28px;
+  }
+}

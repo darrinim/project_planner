@@ -10,6 +10,7 @@ ul {
   /* height: 100%; */
   width: 100%;
   margin: 0 auto;
+  padding-top: 40px;
   background-color: #f9fce1;
   overflow: hidden;
 }
@@ -37,4 +38,11 @@ ul {
 }
 .fab {
   color: black;
+}
+
+
+@media (min-width: 768px) {
+  .FooterContainer {
+    padding-top: 34px
+  }
 }

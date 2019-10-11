@@ -12,9 +12,45 @@
 .FullDetailsForm {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin: 30px 10px 0 10px;
 }
 .FullDetailsContainer {
   overflow: hidden;
   background-color: #CAE3FD;
+}
+.goodBoyButton {
+  z-index: 1;
+}
+.fullDetailsDog {
+  width: 30%;
+  position: relative;
+  top: 28px;
+  transform: rotate(8deg);
+}
+.detailsInput {
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.savePlanButton {
+  margin-top: 15px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #FDE5E4;
+  cursor: pointer;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.2);
+}
+
+
+@media(min-width: 768px) {
+  .FullDetailsContainer {
+    padding: 0 400px;
+  }
+  .fullDetailsDog {
+    width: 30%;
+    position: relative;
+    top: 44px;
+    transform: rotate(8deg);
+  }
 }

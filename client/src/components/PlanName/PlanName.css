@@ -24,3 +24,29 @@
   height: 30px;
   background-color: white;
 }
+
+@media(min-width: 768px) {
+  .PlanNameContainer {
+    /* height: 10px; */
+    padding: 200px;
+  }
+  .formName {
+    width: 80%;
+  }
+  .PlanNextButton {
+    height: 50px;
+    font-size: 20px;
+  }
+  .planHeader {
+    font-size: 30px;
+  }
+  .planUserName {
+    font-size: 24px;
+  }
+  .planNameDog {
+    height: 35%;
+    position: absolute;
+    top: 23%;
+    right: 13%;
+  }
+}

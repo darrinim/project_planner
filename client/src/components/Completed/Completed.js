@@ -12,12 +12,13 @@ class Completed extends React.Component {
     return (
       <div className="CompletedContainer">
 
-        <div>{this.props.userProjects && this.props.userProjects.map(el => {
+        <div className="desktopDiv">{this.props.userProjects && this.props.userProjects.map(el => {
           return (
 
             <ul
               className="usersProjects"
               id={el.id}>
+              <li className="usersLi usersLiName">{el.name}</li>
               <li className="usersLi">Description: {el.description}</li>
               <li
                 className="usersLi"

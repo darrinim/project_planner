@@ -7,7 +7,7 @@
     "node": "12.6.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "react-scripts test --env=jsdom",
     "dev": "nodemon server.js",
     "start": "node server.js",
     "db:create": "dropdb --if-exists -e ruksak_db && createdb -e ruksak_db",
@@ -15,7 +15,6 @@
     "db:seed": "node seed.js",
     "heroku-postbuild": "npm run build",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build && mv build/index.html build/200.html && surge build"
   },
@@ -41,6 +40,7 @@
     "pg": "^7.12.1",
     "react-burger-menu": "^2.6.11",
     "react-router-dom": "^5.0.1",
+    "react-trello": "^2.2.3",
     "sequelize": "^5.18.4"
   },
   "devDependencies": {

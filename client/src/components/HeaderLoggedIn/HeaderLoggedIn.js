@@ -19,6 +19,7 @@ class HeaderLoggedIn extends React.Component {
 
 
             {loggedIn}
+            <Link className="linkStyle" to="/">Home</Link>
             <Link className="linkStyle" to="/login">Login</Link>
             <Link className="linkStyle"
             onClick={this.props.handleLogout}>Log out</Link>

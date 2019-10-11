@@ -20,7 +20,7 @@
     1px 6px 8px rgba(0,0,0,0.3),
     2px 8px 24px rgba(255,255,255,0.4);
   background-color: #CAE3FD;
-  margin: 15px auto;
+  margin: 20px auto;
   width: 70%;
 }
 .LoginContinueForm {
@@ -39,7 +39,7 @@
     1px 6px 8px rgba(0,0,0,0.3),
     2px 8px 24px rgba(255,255,255,0.4);
   background-color: #CAE3FD;
-  margin: 15px auto;
+  margin: 20px auto;
   width: 70%;
 
 }
@@ -57,7 +57,7 @@ div form h3 {
 div form input {
   padding: 10px 0;
   margin: 10px 0;
-  background-color: rgba(203, 228, 252, 0.9);
+  /* background-color: rgba(203, 228, 252, 0.9); */
 }
 .submit {
   margin: 10px 0 40px 0;
@@ -65,19 +65,36 @@ div form input {
 }
 
 
-@media(max-width: 768px) {
+@media(min-width: 768px) {
   .formContainer {
-    /* display: flex;
-    flex-direction: row; */
+    display: flex;
+    flex-direction: row;
   }
   .registerForm {
     border: 1px solid black;
-    /* width: 45%; */
-      height: 50%;
+    width: 35%;
+    height: 50%;
+    margin-top: 68px;
+    padding: 0 30px;
   }
   .LoginContinueForm {
     border: 1px solid black;
-    /* width: 45%; */
-      height: 50%;
+    width: 35%;
+      /* height: 50%; */
+      margin-top: 75px;
+      padding: 0 30px;
+  }
+  .signIn {
+    position: relative;
+    top: 65px;
+  }
+  .submit {
+    font-size: 16px;
+    background-color: #FDE5E4;
+    cursor: pointer;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.2);
+  }
+  div form input {
+    font-size: 18px;
   }
 }
