@@ -119,6 +119,7 @@ class App extends React.Component {
   };
 
   handleRegister = async (e) => {
+    console.log('this is the handleregister', this.state.authFormData);
     e.preventDefault();
     if (this.state.authFormData.username !== "" && this.state.authFormData.email !== "" && this.state.authFormData.password !== "") {
       const user = await registerUser(this.state.authFormData);

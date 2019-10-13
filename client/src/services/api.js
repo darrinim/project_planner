@@ -36,8 +36,8 @@ export const editProjects = async (data, projectId) => {
 =================AUTH FUNCTIONS=================
 ============================================== */
 
-export const getUser = async (userid) => {
-  const resp = await api.get(`/auth/${userid}`);
+export const getUser = async (userId) => {
+  const resp = await api.get(`/auth/${userId}`);
   return resp.data;
 }
 
