@@ -122,11 +122,13 @@ class App extends React.Component {
     console.log('this is the handleregister', this.state.authFormData);
     e.preventDefault();
     if (this.state.authFormData.username !== "" && this.state.authFormData.email !== "" && this.state.authFormData.password !== "") {
-      const user = await registerUser(this.state.authFormData);
+      const userData = await registerUser(this.state.authFormData);
+      console.log('this is the user', userData.token);
       this.setState({
-        currentUser: user
+        currentUser: userData.user
       })
-            this.props.history.push('/plan');
+      localStorage.setItem("jwt", userData.token)
+      this.props.history.push('/plan');
     }
   };
 

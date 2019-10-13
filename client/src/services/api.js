@@ -1,5 +1,7 @@
 const axios = require('axios');
 
+// const BASE_URL = 'http://localhost:3001';
+
 const BASE_URL = 'https://dev-dog--planner.herokuapp.com';
 const api = axios.create({ baseURL: BASE_URL });
 
@@ -54,7 +56,9 @@ export const registerUser = async (registerData) => {
 export const verifyUser = async () => {
   const token = localStorage.getItem("jwt")
   if(token) {
+    console.log('this is the token', token);
     const resp = await api.get(`/auth/verify`, { headers: { Authorization: `Bearer ${token}` } });
+    console.log('this is the response', resp);
     return resp.data;
   } else {
     return false;
