@@ -1,7 +1,9 @@
 .CompletedContainer {
   background-color: #fbd1b7;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: scroll;
+  height: 90vh;
+  scroll-behavior: smooth;
 }
 .usersLiName {
   font-size: 24px;
@@ -33,9 +35,12 @@
 .dogWinkFace {
   width: 20%;
   transform: rotate(12deg);
+  z-index: 0;
+    /* cursor: url('https://res.cloudinary.com/darrin-im/image/upload/v1570813347/dogBone_xy9auw.png', auto); */
 }
 .dogWinkFace:hover {
-  cursor: grab;
+  /* cursor: grab; */
+  cursor: url('https://res.cloudinary.com/darrin-im/image/upload/v1571014121/dogBone_dxwmaz.png'), auto;
 }
 .completedHeaderCont {
   display: flex;
