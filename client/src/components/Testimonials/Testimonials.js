@@ -15,7 +15,7 @@ const Testimonials = () => {
 
           <div className="testCard">
           <img
-            className="dogWink wiggler"
+            className="dogWink dogWinkOne wiggler"
             src="https://res.cloudinary.com/darrin-im/image/upload/v1570761245/DogWink-final_kzsm8k.png"/>
             <p className="cardText">" Since using goodBoy, productivity has gone up 100%! Seriously! It is so awesome "</p>
             <p className="cardTextName">- Bill Gates</p>
@@ -32,7 +32,7 @@ const Testimonials = () => {
 
           <div className="testCard">
           <img
-            className="dogWink wiggler"
+            className="dogWink dogWinkThree wiggler"
             src="https://res.cloudinary.com/darrin-im/image/upload/v1570761245/DogWink-final_kzsm8k.png"/>
             <p className="cardText">" I only wish I could accomplish half of what goodBoy has been able to do "</p>
             <p className="cardTextName">- Larry Page</p>

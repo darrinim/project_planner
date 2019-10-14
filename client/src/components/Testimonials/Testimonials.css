@@ -12,6 +12,12 @@
   left: 0;
   right: 0;
 }
+.dogWinkThree:hover {
+  cursor: grab;
+}
+.dogWinkOne:hover {
+  cursor: grab;
+}
 .testimonials {
   height: 100%;
   width: 100%;
