@@ -1,6 +1,13 @@
+.emailHeadlineTwo {
+  font-weight: 400;
+}
+.emailHeadlineSign {
+  color: #ff8080;
+  text-decoration: underline;
+}
 .EmailSubContainer {
   text-align: center;
-  padding: 10px 10px;
+  padding: 40px 10px;
   position: relative;
   margin-bottom: 0;
   bottom: 0;
@@ -20,11 +27,20 @@
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  margin-right: 10px;
   background-color: #E6F2FF;
+  margin-bottom: 5px;
 }
 .emailInput::placeholder {
   color: black;
+  text-align: center;
+}
+.emailSubmitCont {
+  /* border: 1px solid black; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -32,5 +48,23 @@
     font-size: 28px;
     width: 60%;
     margin: 0 auto;
+  }
+  .emailSubmitCont {
+    /* border: 1px solid black; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 0 auto;
+  }
+  .emailInput {
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+  .emailInput::placeholder {
+    text-align: center;
+  }
+  .emailHeadlineSign {
+    text-decoration: underline;
   }
 }

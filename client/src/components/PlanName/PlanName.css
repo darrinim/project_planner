@@ -27,10 +27,10 @@
   border-radius: 5px;
 }
 .planNameDog {
-  height: 14%;
+  height: 10%;
   position: absolute;
-  top: 45%;
-  right: 2%;
+  top: 36%;
+  right: 15%;
 }
 
 @media(min-width: 768px) {
@@ -54,7 +54,7 @@
   .planNameDog {
     height: 35%;
     position: absolute;
-    top: 23%;
-    right: 13%;
+    top: 28%;
+    right: 10%;
   }
 }
