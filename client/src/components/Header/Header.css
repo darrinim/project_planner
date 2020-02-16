@@ -15,7 +15,6 @@
 .dogHeader {
   /* border: 1px solid black; */
   position: absolute;
-
   height: 20em;
   margin: 0 auto;
   z-index: 1;
@@ -68,7 +67,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-    background-color: #CAE3FD;
+  background-color: #CAE3FD;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -100,6 +99,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   line-height: 2em;
   font-weight: bold;
   outline: none;
+  text-transform: capitalize;
 }
 .linkStyle:hover {
   text-decoration: underline;
