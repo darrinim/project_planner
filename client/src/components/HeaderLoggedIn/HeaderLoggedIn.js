@@ -23,6 +23,7 @@ class HeaderLoggedIn extends React.Component {
             onClick={this.props.handleLogout}>Log out</Link>
           </Menu>
           <img
+            alt="cute-dog"
             className="dogMenu wigglers"
             src="https://res.cloudinary.com/darrin-im/image/upload/v1570672315/DogCartoon-face_tuaoq1.png" />
         </div>

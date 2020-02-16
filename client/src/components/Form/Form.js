@@ -1,6 +1,5 @@
 import React from 'react';
 import './Form.css';
-import { Link, Route, Switch, withRouter } from 'react-router-dom'
 
 class Form extends React.Component {
   constructor(props) {

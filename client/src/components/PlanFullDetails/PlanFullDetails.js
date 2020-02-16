@@ -14,7 +14,9 @@ class PlanFullDetails extends React.Component {
           <h4>By {this.props.currentUser && this.props.currentUser.username}</h4>
           <img
             className="fullDetailsDog"
-            src="https://res.cloudinary.com/darrin-im/image/upload/v1570502752/DogCartoon-sitting_ao0ung.png" />
+            src="https://res.cloudinary.com/darrin-im/image/upload/v1570502752/DogCartoon-sitting_ao0ung.png"
+            alt="cute-dog"
+            />
         </div>
         <form
           className="FullDetailsForm"

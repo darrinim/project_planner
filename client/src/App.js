@@ -6,14 +6,13 @@ import Testimonials from './components/Testimonials/Testimonials';
 import EmailSub from './components/EmailSub/EmailSub';
 import Footer from './components/Footer/Footer';
 import PlanName from './components/PlanName/PlanName';
-import PlanDescription from './components/PlanDescription/PlanDescription';
 import PlanFullDetails from './components/PlanFullDetails/PlanFullDetails';
 import Login from './components/Login/Login';
 import Completed from './components/Completed/Completed';
 import EditProjectForm from './components/EditProjectForm/EditProjectForm';
 import HeaderLoggedIn from './components/HeaderLoggedIn/HeaderLoggedIn';
 
-import { loginUser, registerUser, getUser, makeProject, verifyUser, editProjects, getProjects, deleteProject } from './services/api';
+import { loginUser, registerUser, makeProject, verifyUser, editProjects, getProjects, deleteProject } from './services/api';
 
 import './App.css';
 

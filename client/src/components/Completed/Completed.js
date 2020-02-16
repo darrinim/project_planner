@@ -13,6 +13,7 @@ class Completed extends React.Component {
       <div className="completedHeaderCont">
       <h2 className="completedHeader">In Pawgress!</h2>
       <img
+        alt="cute-dog"
         className="dogWinkFace wiggler"
         src="https://res.cloudinary.com/darrin-im/image/upload/v1570761245/DogWink-final_kzsm8k.png"/>
       </div>

@@ -21,7 +21,7 @@ class Header extends React.Component {
             <Link className="linkStyle"
             onClick={this.props.handleLogout}>Log out</Link>
           </Menu>
-          <img className="dogHeader" src="https://res.cloudinary.com/darrin-im/image/upload/v1570502752/DogCartoon-wink_z9b537.png"/>
+          <img className="dogHeader" alt="cute-dog" src="https://res.cloudinary.com/darrin-im/image/upload/v1570502752/DogCartoon-wink_z9b537.png"/>
         </div>
       )
     };
