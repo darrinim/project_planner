@@ -56,13 +56,9 @@ export const registerUser = async (registerData) => {
 export const verifyUser = async () => {
   const token = localStorage.getItem("jwt")
   if(token) {
-    console.log('this is the token', token);
     const resp = await api.get(`/auth/verify`, { headers: { Authorization: `Bearer ${token}` } });
-    console.log('this is the response', resp);
     return resp.data;
   } else {
     return false;
   }
 }
-
-// datadog test part two

@@ -23,12 +23,10 @@ userController.get('/', async (req, res, next) => {
 });
 
 userController.post('/register', async (req, res, next) => {
-  console.log('hitting post route', req.body);
   try {
     const { username, password, email } = req.body;
     // eslint-disable-next-line
     const password_digest = await hashPassword(password);
-    console.log('this is password digest', password_digest);
     const user = await User.create({ username, password_digest, email });
     const respData = buildAuthResponse(user);
     res.json(respData);

@@ -7,7 +7,6 @@ class PlanName extends React.Component {
   }
 
   render() {
-    console.log('this is props in planname', this.props);
     return (
       <div className="PlanNameContainer">
       <img className="planNameDog" src="https://res.cloudinary.com/darrin-im/image/upload/v1570502752/DogCartoon-sitting3_nsplnm.png" />

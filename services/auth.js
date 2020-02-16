@@ -24,7 +24,6 @@ const restrict = (req, res, next) => {
     res.locals.user = data;
     next();
   } catch (e) {
-    console.log(e.message);
     res.status(403).send('Unauthorized');
   };
 };

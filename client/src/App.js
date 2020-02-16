@@ -73,7 +73,6 @@ class App extends React.Component {
 
   handlePlanChange = async (e) => {
     const { name, value } = e.target
-    console.log('this is name, value', name, value);
     this.setState(prevState => ({
       planDetailsData: {
         ...prevState.planDetailsData,
@@ -93,7 +92,6 @@ class App extends React.Component {
   handleLogin = async (e) => {
     e.preventDefault();
     const userData = await loginUser(this.state.authFormData);
-    console.log('this is user data', userData.user);
     this.setState({
       currentUser: userData.user
     })
@@ -119,11 +117,9 @@ class App extends React.Component {
   };
 
   handleRegister = async (e) => {
-    console.log('this is the handleregister', this.state.authFormData);
     e.preventDefault();
     if (this.state.authFormData.username !== "" && this.state.authFormData.email !== "" && this.state.authFormData.password !== "") {
       const userData = await registerUser(this.state.authFormData);
-      console.log('this is the user', userData.token);
       this.setState({
         currentUser: userData.user
       })
@@ -154,7 +150,6 @@ class App extends React.Component {
 
   checkUser = async () => {
     const currentUser = await verifyUser();
-    // console.log('THIS IS THE CURRENT USER', currentUser);
     if (currentUser) {
       this.getUserProjects(currentUser);
       this.setState({ currentUser });
@@ -200,7 +195,6 @@ class App extends React.Component {
 
   handleSubmitName = async (e) => {
     e.preventDefault();
-    console.log('LOOK FOR THIS SERIOUSLY', name, value);
     const { name, value } = e.target
     this.setState(prevState => ({
       planDetailsData: {
@@ -235,7 +229,6 @@ class App extends React.Component {
   };
 
   deleteUserProjects = async (projectId) => {
-    console.log('this is deleteUserProjects');
     const deletingProject = await deleteProject(projectId);
     this.setState(prevState => ({
       userProjects: prevState.userProjects.filter((el, i) => el.id !== projectId)

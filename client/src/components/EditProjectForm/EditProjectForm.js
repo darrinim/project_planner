@@ -7,7 +7,6 @@ class EditProjectForm extends React.Component {
   }
 
   render() {
-    console.log('this is props on editprojectform', this.props);
     return(
 
       <div className="FullDetailsContainer">
