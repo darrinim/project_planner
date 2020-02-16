@@ -88,7 +88,7 @@ class Form extends React.Component {
             value={this.props.authFormData.password}
             onChange={this.props.handleAuthChange}
           />
-          <button className="submit registerBut">Register</button>
+          <button className="submit registerBut" type="submit">Register</button>
         </form>
       </div>
     )

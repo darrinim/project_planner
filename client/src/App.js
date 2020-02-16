@@ -129,6 +129,9 @@ class App extends React.Component {
       })
       localStorage.setItem("jwt", userData.token)
       this.props.history.push('/plan');
+    } else {
+      console.log('this is not working');
+      
     }
   };
 
