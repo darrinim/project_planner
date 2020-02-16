@@ -12,7 +12,6 @@ import Login from './components/Login/Login';
 import Completed from './components/Completed/Completed';
 import EditProjectForm from './components/EditProjectForm/EditProjectForm';
 import HeaderLoggedIn from './components/HeaderLoggedIn/HeaderLoggedIn';
-import Modal from './components/Modal/Modal';
 
 import { loginUser, registerUser, getUser, makeProject, verifyUser, editProjects, getProjects, deleteProject } from './services/api';
 
