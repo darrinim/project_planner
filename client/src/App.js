@@ -325,9 +325,6 @@ class App extends React.Component {
             handleSubmitPlan={this.handleSubmitPlan}
             setVisible={this.setVisible}
           />
-
-          <Modal
-            visible={this.state.visible}/>
           <Footer />
           </>
         )} />
