@@ -4,10 +4,6 @@ import { slide as Menu } from 'react-burger-menu';
 import "./Header.css"
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
 
   render() {
     const loggedIn = this.props.currentUser !== null ?

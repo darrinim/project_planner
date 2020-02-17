@@ -2,9 +2,6 @@ import React from 'react';
 import './EditProjectForm.css';
 
 class EditProjectForm extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return(

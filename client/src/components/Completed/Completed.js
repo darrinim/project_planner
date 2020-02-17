@@ -3,42 +3,34 @@ import './Completed.css'
 
 
 class Completed extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return (
-      <div className="CompletedContainer">
-      <div className="completedHeaderCont">
-      <h2 className="completedHeader">In Pawgress!</h2>
-      <img
-        alt="cute-dog"
-        className="dogWinkFace wiggler"
-        src="https://res.cloudinary.com/darrin-im/image/upload/v1570761245/DogWink-final_kzsm8k.png"/>
-      </div>
-        <div className="desktopDiv">{this.props.userProjects && this.props.userProjects.map(el => {
-          return (
-
-            <ul
-              className="usersProjects"
-              id={el.id}>
-              <li className="usersLi usersLiName">{el.name}</li>
-              <li className="usersLi">Description: {el.description}</li>
-              <li
-                className="usersLi"
-              >MVP: {el.mvp}</li>
-              <li className="usersLi">Post MVP: {el.postMvp}</li>
-              <li className="usersLi">Status: {el.status}</li>
-              <button
-                className="completedButtons"
-                onClick={(e) => this.props.deleteUserProjects(el.id)}>Delete</button>
-              <button
-                className="completedButtons"
-                onClick={() => (this.props.showEditForm(el))}>Edit</button>
-            </ul>
-          )
-        })}</div>
+      <div className="completedContainer">
+        <div className="completedHeaderCont">
+          <h2 className="completedHeader">In Pawgress!</h2>
+          <img
+            alt="cute-dog"
+            className="dogWinkFace wiggler"
+            src="https://res.cloudinary.com/darrin-im/image/upload/v1570761245/DogWink-final_kzsm8k.png"/>
+        </div>
+        <div>
+          {this.props.userProjects && this.props.userProjects.map(el => {
+            return (
+              <ul
+                className="usersProjects"
+                id={el.id}>
+                <li>{el.name}</li>
+                <li>Description: {el.description}</li>
+                <li>MVP: {el.mvp}</li>
+                <li>Post MVP: {el.postMvp}</li>
+                <li>Status: {el.status}</li>
+                <button onClick={(e) => this.props.deleteUserProjects(el.id)}>Delete</button>
+                <button onClick={() => (this.props.showEditForm(el))}>Edit</button>
+              </ul>
+            )
+          })}
+        </div>
       </div>
     )
   }

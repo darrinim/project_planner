@@ -17,9 +17,9 @@ import { loginUser, registerUser, makeProject, verifyUser, editProjects, getProj
 import './App.css';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
   state = {
     currentUser: null,
     visible: false,
@@ -380,7 +380,6 @@ class App extends React.Component {
             handlePlanChange={this.handlePlanChange}
             handleSubmitPlan={this.handleSubmitPlan}
             handleSubmitEdits={this.handleSubmitEdits}
-
           />
           <Footer />
           </>

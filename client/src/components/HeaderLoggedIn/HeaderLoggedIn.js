@@ -4,10 +4,6 @@ import { bubble as Menu } from 'react-burger-menu';
 import "./HeaderLoggedIn.css"
 
 class HeaderLoggedIn extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
 
   render() {
     const loggedIn = this.props.currentUser !== null ?

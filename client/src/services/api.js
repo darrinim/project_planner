@@ -24,7 +24,7 @@ export const deleteProject = async (projectId) => {
   return resp.data;
 }
 
-{/*below is getProject*/}
+/* below is getProject */
 export const editProjects = async (data, projectId) => {
   try {
     const project = await api.put(`/project/${projectId}`, data);

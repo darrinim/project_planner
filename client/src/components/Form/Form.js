@@ -27,10 +27,11 @@ class Form extends React.Component {
       <div className="formContainer">
         <form
           id="login"
-          className="LoginContinueForm"
+          // className="LoginContinueForm"
+          className="registerForm"
           onSubmit={(e) => this.props.handleLog(e)}
         >
-          <h3 className="formRegisterTag">Please Sign In to continue, or Register</h3>
+          <h3 className="formRegisterTag">Please Sign In</h3>
           <label for="username">Username: </label>
           <input
             type="text"
@@ -47,18 +48,19 @@ class Form extends React.Component {
             value={this.props.authLoginData.password}
             onChange={(e) => this.props.handleChange(e)}
             />
+             <label className="filler" for="filler">filler</label>
+             <input className="filler" placeholder="filler" type="text" name="filler"/>
           <button
             className="submit signIn"
             type="submit">Sign In</button>
         </form>
+
         <form
           className="registerForm"
           id="register"
           onSubmit={(e) => this.props.handleRegister(e)}
         >
-          <div className="test">
-            <h3 className="registerTag">Register below!</h3>
-          </div>
+          <h3 className="registerTag">Register below!</h3>
           <label for="password">Email: </label>
           <input
             className="formInput"

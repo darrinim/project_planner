@@ -2,9 +2,6 @@ import React from 'react';
 import './PlanFullDetails.css';
 
 class PlanFullDetails extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return(
@@ -53,9 +50,6 @@ class PlanFullDetails extends React.Component {
             className="savePlanButton"
             type="submit">Save Plan</button>
         </form>
-{/*        <button
-          className="goodBoyButton"
-          onClick={() => this.props.setVisible()}>BUTTTONN</button>     */}
       </div>
     )
   }
